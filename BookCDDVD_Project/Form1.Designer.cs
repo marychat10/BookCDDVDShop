@@ -65,8 +65,7 @@
             this.txtLeadActor = new System.Windows.Forms.TextBox();
             this.lblReleaseDate = new System.Windows.Forms.Label();
             this.txtReleaseDate = new System.Windows.Forms.TextBox();
-            this.txtRunTime = new System.Windows.Forms.Label();
-            this.txtRTime = new System.Windows.Forms.TextBox();
+            this.txtRunTime = new System.Windows.Forms.TextBox();
             this.lblCDClassical = new System.Windows.Forms.Label();
             this.txtLabel = new System.Windows.Forms.Label();
             this.txtCDLabel = new System.Windows.Forms.TextBox();
@@ -84,6 +83,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.lblRunTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -423,20 +423,11 @@
             // 
             // txtRunTime
             // 
-            this.txtRunTime.AutoSize = true;
-            this.txtRunTime.Location = new System.Drawing.Point(711, 717);
+            this.txtRunTime.Enabled = false;
+            this.txtRunTime.Location = new System.Drawing.Point(825, 717);
             this.txtRunTime.Name = "txtRunTime";
-            this.txtRunTime.Size = new System.Drawing.Size(77, 20);
-            this.txtRunTime.TabIndex = 37;
-            this.txtRunTime.Text = "Run Time";
-            // 
-            // txtRTime
-            // 
-            this.txtRTime.Enabled = false;
-            this.txtRTime.Location = new System.Drawing.Point(794, 717);
-            this.txtRTime.Name = "txtRTime";
-            this.txtRTime.Size = new System.Drawing.Size(124, 26);
-            this.txtRTime.TabIndex = 38;
+            this.txtRunTime.Size = new System.Drawing.Size(124, 26);
+            this.txtRunTime.TabIndex = 38;
             // 
             // lblCDClassical
             // 
@@ -608,11 +599,21 @@
             this.btnDelete.Text = "Delete\r\n";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
+            // lblRunTime
+            // 
+            this.lblRunTime.AutoSize = true;
+            this.lblRunTime.Location = new System.Drawing.Point(711, 720);
+            this.lblRunTime.Name = "lblRunTime";
+            this.lblRunTime.Size = new System.Drawing.Size(77, 20);
+            this.lblRunTime.TabIndex = 56;
+            this.lblRunTime.Text = "Run Time\r\n";
+            // 
             // frmBookCDDVD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1291, 1208);
+            this.Controls.Add(this.lblRunTime);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEdit);
@@ -630,7 +631,6 @@
             this.Controls.Add(this.txtCDLabel);
             this.Controls.Add(this.txtLabel);
             this.Controls.Add(this.lblCDClassical);
-            this.Controls.Add(this.txtRTime);
             this.Controls.Add(this.txtRunTime);
             this.Controls.Add(this.txtReleaseDate);
             this.Controls.Add(this.lblReleaseDate);
@@ -696,34 +696,21 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblBook;
         private System.Windows.Forms.Label lblISBN;
-        private System.Windows.Forms.TextBox txtISBNLeft;
         private System.Windows.Forms.Label lblHyphen;
-        private System.Windows.Forms.TextBox txtISBNRight;
         private System.Windows.Forms.Label Author;
-        private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.Label lblPages;
-        private System.Windows.Forms.TextBox txtPages;
         private System.Windows.Forms.Label lblCISBook;
-        private System.Windows.Forms.ComboBox comboCISArea;
         private System.Windows.Forms.Label lblCISArea;
         private System.Windows.Forms.Label lblDVD;
         private System.Windows.Forms.Label lblLeadActor;
-        private System.Windows.Forms.TextBox txtLeadActor;
         private System.Windows.Forms.Label lblReleaseDate;
-        private System.Windows.Forms.TextBox txtReleaseDate;
-        private System.Windows.Forms.Label txtRunTime;
-        private System.Windows.Forms.TextBox txtRTime;
         private System.Windows.Forms.Label lblCDClassical;
         private System.Windows.Forms.Label txtLabel;
-        private System.Windows.Forms.TextBox txtCDLabel;
         private System.Windows.Forms.Label lblArtists;
-        private System.Windows.Forms.TextBox txtArtists;
         private System.Windows.Forms.Label lblCDOrchestraMusic;
         private System.Windows.Forms.Label lblConductor;
-        private System.Windows.Forms.TextBox txtConductor;
         private System.Windows.Forms.Label lblCDChamberMusic;
         private System.Windows.Forms.Label lblInstruments;
-        private System.Windows.Forms.ComboBox comboInstruments;
         private System.Windows.Forms.Label lblMoreInstructions;
         private System.Windows.Forms.Button btnEnterUPC;
         private System.Windows.Forms.Button btnFind;
@@ -734,6 +721,19 @@
         public System.Windows.Forms.TextBox txtPrice;
         public System.Windows.Forms.TextBox txtTitle;
         public System.Windows.Forms.TextBox txtQuantity;
+        public System.Windows.Forms.TextBox txtISBNLeft;
+        public System.Windows.Forms.TextBox txtISBNRight;
+        public System.Windows.Forms.TextBox txtAuthor;
+        public System.Windows.Forms.TextBox txtPages;
+        public System.Windows.Forms.ComboBox comboCISArea;
+        public System.Windows.Forms.TextBox txtLeadActor;
+        public System.Windows.Forms.TextBox txtReleaseDate;
+        public System.Windows.Forms.TextBox txtRunTime;
+        public System.Windows.Forms.TextBox txtCDLabel;
+        public System.Windows.Forms.TextBox txtArtists;
+        public System.Windows.Forms.TextBox txtConductor;
+        public System.Windows.Forms.ComboBox comboInstruments;
+        private System.Windows.Forms.Label lblRunTime;
     }
 }
 

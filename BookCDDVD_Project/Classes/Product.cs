@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 // Product Class
 // Responsible for all processing related to a Product
-
 // For serialization
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using BookCDDVD_Project.Classes;
 
 namespace BookCDDVD_Project.Classes
 {
