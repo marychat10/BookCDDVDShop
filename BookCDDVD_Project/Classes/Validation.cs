@@ -176,6 +176,142 @@ namespace BookCDDVD_Project.Classes
            
         }
         //validate DVD entry
-       
+        public static bool ValidateDVDLeadActor(string leadActor)
+        {
+            if(String.IsNullOrEmpty(leadActor))
+            {
+                MessageBox.Show("Lead Actor is blank!");
+                return false;
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(leadActor, @"^\s *[A - Za - z] + (?:\s +[A - Za - z] +) *\s *$"))
+            {
+                MessageBox.Show("Lead Actor cannot contain numbers");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidateDVDReleaseDate(string releaseDate)
+        {
+            try
+            {
+                DateTime date = Convert.ToDateTime(releaseDate);
+                DateTime maxDate = new DateTime(2019, 12, 31);
+                DateTime minDate = new DateTime(1980, 1, 1);
+                if (String.IsNullOrEmpty(releaseDate))
+                {
+                    MessageBox.Show("DVD Release Date is empty!");
+                    return false;
+            }
+                if (date.Date > maxDate)
+                {
+                    MessageBox.Show("Release date cannot be after December 31, 2019");
+                    return false;
+                }
+                if (date.Date < minDate)
+                {
+                    MessageBox.Show("Release date cannot be before January 1, 1980");
+                    return false;
+                }
+                return true;
+            }
+
+            catch
+            {
+                MessageBox.Show("DVD Release Date must be in correct format!");
+                return false;
+            }
+        }
+
+        public static bool ValidateDVDRunTime(string runTime)
+        {
+            try
+            {
+                int minutes = Convert.ToInt32(runTime);
+                if (String.IsNullOrEmpty(runTime))
+                {
+                    MessageBox.Show("DVD Run Time is empty!");
+                    return false;
+                }
+
+                if (minutes <= 0)
+                {
+                    MessageBox.Show("DVD Run Time cannot be less than or equal to 0 minutes!");
+                    return false;
+                }
+
+                if (minutes > 240)
+                {
+                    MessageBox.Show("DVD Run Time cannot be more than 240 minutes!");
+                    return false;
+                }
+
+                return true;
+            }
+
+            catch
+            {
+                MessageBox.Show("DVD Run Time must be an integer (run time in minutes)");
+                return false;
+            }
+            
+        }
+
+
+        // Validate CD Entry
+        public static bool ValidateCDLabel(string label)
+        {
+            if(String.IsNullOrEmpty(label))
+            {
+                MessageBox.Show("CD Label cannot be empty!");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidateCDArtists(string artists)
+        {
+            if(String.IsNullOrEmpty(artists))
+            {
+                MessageBox.Show("CD Artists cannot be empty!");
+                return false;
+            }
+
+            if(System.Text.RegularExpressions.Regex.IsMatch(artists, @"[\d]"))
+            {
+                MessageBox.Show("Artist name cannot contain numbers");
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool  ValidateCDConductor(string conductor)
+        {
+            if(String.IsNullOrEmpty(conductor))
+            {
+                MessageBox.Show("CD Conductor cannot be empty!");
+                return false;
+            }
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(conductor, @"[\d]"))
+            {
+                MessageBox.Show("Conductor name cannot contain numbers");
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool ValidateCDInstrumentList(string instruments)
+        {
+            if(String.IsNullOrEmpty(instruments))
+            {
+                MessageBox.Show("There must be at least one instrument in the CD Instrument List!");
+                return false;
+            }
+
+            return true;
+        }
     }
 }
