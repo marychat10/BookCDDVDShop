@@ -12,9 +12,7 @@ using BookCDDVD_Project.Classes;
 
 // To serialize a persistant object
 using System.Runtime.Serialization.Formatters.Binary;
-
-
-
+using BookCDDVDShop_Project.Classes;
 
 namespace BookCDDVD_Project
 {
@@ -58,7 +56,19 @@ namespace BookCDDVD_Project
             
 
         }
-        
 
+        private void btnCreateCDOrc_Click(object sender, EventArgs e)
+        {
+            txtArtists.Enabled = true;
+            txtCDLabel.Enabled = true;
+            txtConductor.Enabled = true;
+        }
+
+        private void btnCreateCDCham_Click(object sender, EventArgs e)
+        {
+            txtArtists.Enabled = true;
+            txtCDLabel.Enabled = true;
+            txtInstruments.Enabled = true;
+        }
     }    
 }
