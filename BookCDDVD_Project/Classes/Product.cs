@@ -16,6 +16,7 @@ namespace BookCDDVD_Project.Classes
     [Serializable()]
     public abstract class Product
     {
+        private char[] MyChar = { '$'};  //used to remove dollar symbol if entered by user
         private int hiddenUPC;
         private decimal hiddenPrice;
         private string hiddenTitle;
@@ -100,9 +101,18 @@ namespace BookCDDVD_Project.Classes
         public virtual void Save(frmBookCDDVD f)
         {
             hiddenUPC = Convert.ToInt32(f.txtUPC.Text);
-            hiddenPrice = Convert.ToDecimal(f.txtPrice.Text);
-            hiddenTitle = f.txtTitle.Text;
-            hiddenQuantity = Convert.ToInt32(f.txtQuantity.Text);
+            if (f.txtPrice.Text[0] == '$')
+            {
+                hiddenPrice = Convert.ToDecimal(f.txtPrice.Text.TrimStart(MyChar));
+
+            }
+            else
+            {
+                hiddenPrice = Convert.ToDecimal(f.txtPrice.Text);
+                hiddenTitle = f.txtTitle.Text;
+                hiddenQuantity = Convert.ToInt32(f.txtQuantity.Text);
+            }
+           
         }  // end Save
 
 
