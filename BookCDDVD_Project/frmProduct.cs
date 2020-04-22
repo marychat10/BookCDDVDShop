@@ -12,6 +12,7 @@ using BookCDDVD_Project.Classes;
 
 // To serialize a persistant object
 using System.Runtime.Serialization.Formatters.Binary;
+using BookCDDVDShop_Project.Classes;
 using BookCDDVDShop;
 
 namespace BookCDDVD_Project
@@ -230,6 +231,22 @@ namespace BookCDDVD_Project
             txtRunTime.Enabled = true;
             
 
+        }
+
+        private void btnCreateCDOrc_Click(object sender, EventArgs e)
+        {
+            txtArtists.Enabled = true;
+            txtCDLabel.Enabled = true;
+            txtConductor.Enabled = true;
+        }
+
+        private void btnCreateCDCham_Click(object sender, EventArgs e)
+        {
+            txtArtists.Enabled = true;
+            txtCDLabel.Enabled = true;
+            txtInstruments.Enabled = true;
+        }
+    }    
             toolTip1.SetToolTip(btnCreateDVD, ttSaveDVD);
             txtUPC.Focus();
         } // end DVD Form 
@@ -481,6 +498,7 @@ namespace BookCDDVD_Project
             }
         }
     }
+>>>>>> master
 }
 
    
