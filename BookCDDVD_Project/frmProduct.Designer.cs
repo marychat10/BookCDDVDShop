@@ -393,12 +393,8 @@
             // 
             this.comboCISArea.Enabled = false;
             this.comboCISArea.FormattingEnabled = true;
-<<<<<<< HEAD
-            this.comboCISArea.Items.AddRange(new object[] { "Java101" });
-=======
             this.comboCISArea.Items.AddRange(new object[] {
             "Java101"});
->>>>>>> 9a61fd7b9140bf5a33ac422806f724cf5a95ffa7
             this.comboCISArea.Location = new System.Drawing.Point(308, 933);
             this.comboCISArea.Margin = new System.Windows.Forms.Padding(5);
             this.comboCISArea.Name = "comboCISArea";
@@ -727,71 +723,10 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-    }
+        }
 
-    #endregion
+        #endregion
 
-<<<<<<< HEAD
-    private System.Windows.Forms.Label lblTitle;
-    private System.Windows.Forms.Label lblInstructions;
-    private System.Windows.Forms.Label lblControls;
-    private System.Windows.Forms.Label lblDirections;
-    private System.Windows.Forms.Label lblProduct;
-    private System.Windows.Forms.Label lblUPC;
-    private System.Windows.Forms.Label lblPrice;
-    private System.Windows.Forms.Label lblProductTitle;
-    private System.Windows.Forms.Label lblQuantity;
-    private System.Windows.Forms.Label lblBook;
-    private System.Windows.Forms.Label lblISBN;
-    private System.Windows.Forms.Label lblHyphen;
-    private System.Windows.Forms.Label Author;
-    private System.Windows.Forms.Label lblPages;
-    private System.Windows.Forms.Label lblCISBook;
-    private System.Windows.Forms.Label lblCISArea;
-    private System.Windows.Forms.Label lblDVD;
-    private System.Windows.Forms.Label lblLeadActor;
-    private System.Windows.Forms.Label lblReleaseDate;
-    private System.Windows.Forms.Label lblCDClassical;
-    private System.Windows.Forms.Label txtLabel;
-    private System.Windows.Forms.Label lblArtists;
-    private System.Windows.Forms.Label lblCDOrchestraMusic;
-    private System.Windows.Forms.Label lblConductor;
-    private System.Windows.Forms.Label lblCDChamberMusic;
-    private System.Windows.Forms.Label lblInstruments;
-    private System.Windows.Forms.Label lblMoreInstructions;
-    public System.Windows.Forms.TextBox txtUPC;
-    public System.Windows.Forms.TextBox txtPrice;
-    public System.Windows.Forms.TextBox txtTitle;
-    public System.Windows.Forms.TextBox txtQuantity;
-    public System.Windows.Forms.TextBox txtISBNLeft;
-    public System.Windows.Forms.TextBox txtISBNRight;
-    public System.Windows.Forms.TextBox txtAuthor;
-    public System.Windows.Forms.TextBox txtPages;
-    public System.Windows.Forms.ComboBox comboCISArea;
-    public System.Windows.Forms.TextBox txtLeadActor;
-    public System.Windows.Forms.TextBox txtReleaseDate;
-    public System.Windows.Forms.TextBox txtRunTime;
-    public System.Windows.Forms.TextBox txtCDLabel;
-    public System.Windows.Forms.TextBox txtArtists;
-    public System.Windows.Forms.TextBox txtConductor;
-    private System.Windows.Forms.Label lblRunTime;
-    public System.Windows.Forms.TextBox txtInstruments;
-    private System.Windows.Forms.ToolTip toolTip1;
-    public System.Windows.Forms.Button btnClearForm;
-    public System.Windows.Forms.Button btnExit;
-    public System.Windows.Forms.Button btnEnterUPC;
-    public System.Windows.Forms.Button btnFind;
-    public System.Windows.Forms.Button btnEdit;
-    public System.Windows.Forms.Button btnSave;
-    public System.Windows.Forms.Button btnDelete;
-    public System.Windows.Forms.Button btnCreateBook;
-    public System.Windows.Forms.Button btnCreateCISBook;
-    public System.Windows.Forms.Button btnCreateDVD;
-    public System.Windows.Forms.Button btnCreateCDOrc;
-    public System.Windows.Forms.Button btnCreateCDChamber;
-}
-}
-=======
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblInstructions;
         private System.Windows.Forms.Label lblControls;
@@ -850,4 +785,3 @@
         public System.Windows.Forms.TextBox txtInstruments;
     }
 }
->>>>>>> 9a61fd7b9140bf5a33ac422806f724cf5a95ffa7
