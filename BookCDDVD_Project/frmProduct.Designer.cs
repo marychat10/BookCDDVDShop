@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblInstructions = new System.Windows.Forms.Label();
             this.lblControls = new System.Windows.Forms.Label();
@@ -36,6 +35,7 @@
             this.btnCreateCISBook = new System.Windows.Forms.Button();
             this.btnCreateDVD = new System.Windows.Forms.Button();
             this.btnCreateCDOrc = new System.Windows.Forms.Button();
+            this.btnCreateCDCham = new System.Windows.Forms.Button();
             this.lblDirections = new System.Windows.Forms.Label();
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblUPC = new System.Windows.Forms.Label();
@@ -84,8 +84,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblRunTime = new System.Windows.Forms.Label();
             this.txtInstruments = new System.Windows.Forms.TextBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCreateCDChamber = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -139,7 +137,6 @@
             this.btnCreateCISBook.TabIndex = 4;
             this.btnCreateCISBook.Text = "Create CIS Book";
             this.btnCreateCISBook.UseVisualStyleBackColor = true;
-            this.btnCreateCISBook.Click += new System.EventHandler(this.btnCreateCISBook_Click);
             // 
             // btnCreateDVD
             // 
@@ -150,7 +147,6 @@
             this.btnCreateDVD.TabIndex = 5;
             this.btnCreateDVD.Text = "Create DVD";
             this.btnCreateDVD.UseVisualStyleBackColor = true;
-            this.btnCreateDVD.Click += new System.EventHandler(this.btnCreateDVD_Click);
             // 
             // btnCreateCDOrc
             // 
@@ -174,7 +170,6 @@
             this.btnCreateCDCham.UseVisualStyleBackColor = true;
             this.btnCreateCDCham.Click += new System.EventHandler(this.btnCreateCDCham_Click);
             // 
-
             // lblDirections
             // 
             this.lblDirections.AutoSize = true;
@@ -283,7 +278,6 @@
             this.btnClearForm.TabIndex = 18;
             this.btnClearForm.Text = "Clear Form";
             this.btnClearForm.UseVisualStyleBackColor = true;
-            this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
             // 
             // btnExit
             // 
@@ -399,16 +393,14 @@
             // 
             this.comboCISArea.Enabled = false;
             this.comboCISArea.FormattingEnabled = true;
+<<<<<<< HEAD
             this.comboCISArea.Items.AddRange(new object[] { "Java101" });
+=======
+            this.comboCISArea.Items.AddRange(new object[] {
+            "Java101"});
+>>>>>>> 9a61fd7b9140bf5a33ac422806f724cf5a95ffa7
             this.comboCISArea.Location = new System.Drawing.Point(308, 933);
             this.comboCISArea.Margin = new System.Windows.Forms.Padding(5);
-            "Java101",
-            "Introduction Python",
-            "Data Structures 101",
-            "Cyber Security",
-            "Database Management",
-            "Network Architecture"});
-            this.comboCISArea.Location = new System.Drawing.Point(173, 602);
             this.comboCISArea.Name = "comboCISArea";
             this.comboCISArea.Size = new System.Drawing.Size(226, 39);
             this.comboCISArea.TabIndex = 30;
@@ -615,7 +607,6 @@
             this.btnFind.TabIndex = 52;
             this.btnFind.Text = "Find/Display\r\n\r\n";
             this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnEdit
             // 
@@ -668,14 +659,6 @@
             this.txtInstruments.Name = "txtInstruments";
             this.txtInstruments.Size = new System.Drawing.Size(409, 38);
             this.txtInstruments.TabIndex = 57;
-            // btnCreateCDChamber
-            // 
-            this.btnCreateCDChamber.Location = new System.Drawing.Point(974, 222);
-            this.btnCreateCDChamber.Name = "btnCreateCDChamber";
-            this.btnCreateCDChamber.Size = new System.Drawing.Size(201, 45);
-            this.btnCreateCDChamber.TabIndex = 58;
-            this.btnCreateCDChamber.Text = "Create CD Chamber\r\n\r\n\r\n\r\n";
-            this.btnCreateCDChamber.UseVisualStyleBackColor = true;
             // 
             // frmBookCDDVD
             // 
@@ -683,8 +666,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2295, 1748);
             this.Controls.Add(this.txtInstruments);
-            this.ClientSize = new System.Drawing.Size(1291, 1208);
-            this.Controls.Add(this.btnCreateCDChamber);
             this.Controls.Add(this.lblRunTime);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
@@ -732,6 +713,7 @@
             this.Controls.Add(this.lblUPC);
             this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.lblDirections);
+            this.Controls.Add(this.btnCreateCDCham);
             this.Controls.Add(this.btnCreateCDOrc);
             this.Controls.Add(this.btnCreateDVD);
             this.Controls.Add(this.btnCreateCISBook);
@@ -749,6 +731,7 @@
 
     #endregion
 
+<<<<<<< HEAD
     private System.Windows.Forms.Label lblTitle;
     private System.Windows.Forms.Label lblInstructions;
     private System.Windows.Forms.Label lblControls;
@@ -808,3 +791,63 @@
     public System.Windows.Forms.Button btnCreateCDChamber;
 }
 }
+=======
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblInstructions;
+        private System.Windows.Forms.Label lblControls;
+        private System.Windows.Forms.Button btnCreateBook;
+        private System.Windows.Forms.Button btnCreateCISBook;
+        private System.Windows.Forms.Button btnCreateDVD;
+        private System.Windows.Forms.Button btnCreateCDOrc;
+        private System.Windows.Forms.Button btnCreateCDCham;
+        private System.Windows.Forms.Label lblDirections;
+        private System.Windows.Forms.Label lblProduct;
+        private System.Windows.Forms.Label lblUPC;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblProductTitle;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.Button btnClearForm;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblBook;
+        private System.Windows.Forms.Label lblISBN;
+        private System.Windows.Forms.Label lblHyphen;
+        private System.Windows.Forms.Label Author;
+        private System.Windows.Forms.Label lblPages;
+        private System.Windows.Forms.Label lblCISBook;
+        private System.Windows.Forms.Label lblCISArea;
+        private System.Windows.Forms.Label lblDVD;
+        private System.Windows.Forms.Label lblLeadActor;
+        private System.Windows.Forms.Label lblReleaseDate;
+        private System.Windows.Forms.Label lblCDClassical;
+        private System.Windows.Forms.Label txtLabel;
+        private System.Windows.Forms.Label lblArtists;
+        private System.Windows.Forms.Label lblCDOrchestraMusic;
+        private System.Windows.Forms.Label lblConductor;
+        private System.Windows.Forms.Label lblCDChamberMusic;
+        private System.Windows.Forms.Label lblInstruments;
+        private System.Windows.Forms.Label lblMoreInstructions;
+        private System.Windows.Forms.Button btnEnterUPC;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnDelete;
+        public System.Windows.Forms.TextBox txtUPC;
+        public System.Windows.Forms.TextBox txtPrice;
+        public System.Windows.Forms.TextBox txtTitle;
+        public System.Windows.Forms.TextBox txtQuantity;
+        public System.Windows.Forms.TextBox txtISBNLeft;
+        public System.Windows.Forms.TextBox txtISBNRight;
+        public System.Windows.Forms.TextBox txtAuthor;
+        public System.Windows.Forms.TextBox txtPages;
+        public System.Windows.Forms.ComboBox comboCISArea;
+        public System.Windows.Forms.TextBox txtLeadActor;
+        public System.Windows.Forms.TextBox txtReleaseDate;
+        public System.Windows.Forms.TextBox txtRunTime;
+        public System.Windows.Forms.TextBox txtCDLabel;
+        public System.Windows.Forms.TextBox txtArtists;
+        public System.Windows.Forms.TextBox txtConductor;
+        private System.Windows.Forms.Label lblRunTime;
+        public System.Windows.Forms.TextBox txtInstruments;
+    }
+}
+>>>>>>> 9a61fd7b9140bf5a33ac422806f724cf5a95ffa7
