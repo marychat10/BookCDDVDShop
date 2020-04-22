@@ -5,65 +5,45 @@ using System.Text;
 using System.Threading.Tasks;
 // For serialization
 using System.Runtime.Serialization.Formatters.Binary;
-using BookCDDVD_Project.Classes;
-using System.Windows.Forms;
-using BookCDDVD_Project;
+
 
 namespace BookCDDVD_Project.Classes
 {
     [Serializable()]
-    class CDClassical : Product
+
+    class CDOrchestra : CDClassical
     {
-        private string hiddenLabel;
-        private string[] hiddenArtists;
+        private string hiddenConductor;
 
-        public CDClassical()
+        public CDOrchestra()
         {
-        } // end CD Parameterless Constructor
-
-
+            hiddenConductor = "";
+        }
         // Parameterized Constructor
-        public CDClassical(int UPC, decimal price, string title, int quantity, string label, string[] artists) : base(UPC, price, title, quantity)
+        public CDOrchestra(int UPC, decimal price, string title, int quantity, string label, string[] artists, string conductor) : base(UPC, price, title, quantity, label, artists)
         {
-            hiddenLabel = label;
-            hiddenArtists = artists;
+            hiddenConductor = conductor;
         }  // end Employee Parameterized Constructor
 
 
         // Accessor/mutator for Book ISBN
-        public string CDLabel
+        public string CDConductor
         {
             get
             {
-                return CDLabel;
+                return hiddenConductor;
             }  // end get
             set   // (string value)
             {
-                hiddenLabel = value;
+                hiddenConductor = value;
             }  // end get
         }  // end Property
 
 
-        // Accessor/mutator for Book Author
-        public string[] BookAuthor
-        {
-            get
-            {
-                return hiddenArtists;
-            }  // end get
-            set   // (string value)
-            {
-                hiddenArtists = value;
-            }  // end get
-        }  // end Property
-
-
-        // Save data from form to object
         public override void Save(frmBookCDDVD f)
         {
             base.Save(f);
-            hiddenLabel = f.txtCDLabel.Text;
-            hiddenArtists = (f.txtArtists.Text).Split(',');
+            hiddenConductor = f.txtConductor.Text;
         } // end Save
 
 
@@ -71,8 +51,7 @@ namespace BookCDDVD_Project.Classes
         public override void Display(frmBookCDDVD f)
         {
             base.Display(f);
-            f.txtCDLabel.Text = hiddenLabel;
-            f.txtArtists.Text = string.Join(",", hiddenArtists);
+            f.txtConductor.Text = hiddenConductor;
         }  // end Display
 
 
@@ -82,7 +61,7 @@ namespace BookCDDVD_Project.Classes
         public override string ToString()
         {
             string s = base.ToString() + "\n";
-            s += "CD Info: " + hiddenLabel + hiddenArtists.ToString();
+            s += "CD Info: " + hiddenConductor;
             return s;
         }  // end ToString
 
