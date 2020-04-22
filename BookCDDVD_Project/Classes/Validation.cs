@@ -18,7 +18,7 @@ namespace BookCDDVD_Project.Classes
         //validate product
         public static bool ValidateProduct(string UPC, string price, string title, string quantity)
         {
-         if(ValidateProductUPC(UPC) && ValidateProductPrice(price) && ValidateProductTitle(title) && ValidateProductQuantity(quantity))
+            if (ValidateProductUPC(UPC) && ValidateProductPrice(price) && ValidateProductTitle(title) && ValidateProductQuantity(quantity))
             {
                 return true;
             }
@@ -26,18 +26,19 @@ namespace BookCDDVD_Project.Classes
             {
                 return false;
             }
-         
-        
+
         }
-         //validate product quantity
+
+
+        //validate product quantity
         public static bool ValidateProductQuantity(string quantity)
         {
-            if(quantity == "")
+            if (quantity == "")
             {
                 MessageBox.Show("Product quantity was blank ");
                 return false;
             }
-            if(!System.Text.RegularExpressions.Regex.IsMatch(quantity, @"^[0-9]  $"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(quantity, @"^[0-9]{1,5}$"))
             {
                 MessageBox.Show("Product quantity must be equal or greather than zero");
                 return false;
@@ -49,7 +50,7 @@ namespace BookCDDVD_Project.Classes
         //validate product title
         public static bool ValidateProductTitle(string title)
         {
-            if(title == ""|| title.Length == 1)
+            if (title == "" || title.Length == 1)
             {
                 MessageBox.Show("Product title was blank or less then two characters");
                 return false;
@@ -73,17 +74,17 @@ namespace BookCDDVD_Project.Classes
         //validate product UPC
         public static bool ValidateProductUPC(string UPC)
         {
-            if (UPC ==""|| UPC.Length != 5)
+            if (UPC == "" || UPC.Length != 5)
             {
                 MessageBox.Show("Product UPC was blank or not exactly 5 characters");
                 return false;
             }
-            if(UPC[0] == '0')
+            if (UPC[0] == '0')
             {
                 MessageBox.Show("UPC began with a 0!");
                 return false;
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(UPC, @"^[0-9] {5} $"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(UPC, @"\b\d{5}\b$"))
             {
 
                 MessageBox.Show("Product UPC must be a 5 digit value with no leading zero");
@@ -96,15 +97,15 @@ namespace BookCDDVD_Project.Classes
         //validate product price
         public static bool ValidateProductPrice(string price)
         {
-            if(price =="")
+            if (price == "")
             {
                 MessageBox.Show("Product Price was blank !");
                 return false;
 
             }
-            if(!System.Text.RegularExpressions.Regex.IsMatch(price, @"^((\d+)(\.\d{2}))$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(price, @"^((\$\d+)(\.\d{2}))$"))
             {
-                MessageBox.Show("Product UPC must be exactly 2 decimal places");
+                MessageBox.Show("Product Price must be exactly 2 decimal places");
                 return false;
             }
             return true;
@@ -127,12 +128,12 @@ namespace BookCDDVD_Project.Classes
 
         public static bool ValidateBookPages(string pages)
         {
-            if(pages == "")
+            if (pages == "")
             {
                 MessageBox.Show("Book Pages was blank !");
                 return false;
             }
-            if(!System.Text.RegularExpressions.Regex.IsMatch(pages, @"^[1-9]{1,5}$"))
+            if (pages == "0")
             {
                 MessageBox.Show("Book pages must be greater than 0");
                 return false;
@@ -142,12 +143,12 @@ namespace BookCDDVD_Project.Classes
 
         public static bool ValidateBookAuthor(string author)
         {
-           if(author == "")
+            if (author == "")
             {
                 MessageBox.Show("Book Author was blank!");
                 return false;
             }
-           if(!System.Text.RegularExpressions.Regex.IsMatch(author,@"^\s *[A - Za - z] + (?:\s +[A - Za - z] +) *\s *$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(author, @"[a-zA-Z\s]+$"))
             {
                 MessageBox.Show("Book author must be letters ");
                 return false;
@@ -157,14 +158,14 @@ namespace BookCDDVD_Project.Classes
 
         public static bool ValidateBookISBN(string ISBN)
         {
-            if( ISBN == ""|| ISBN.Length != 6)
+            if (ISBN == "" || ISBN.Length != 6)
             {
                 MessageBox.Show("Book ISBN was blank or not exactly 6 digits!");
                 return false;
             }
             try
             {
-               
+
                 Convert.ToInt32(ISBN);
             }
             catch
@@ -173,8 +174,53 @@ namespace BookCDDVD_Project.Classes
                 return false;
             }
             return true;
-           
+
         }
+
+        //validate book entry
+        public static bool ValidateCISBook(string CISArea)
+        {
+            if (ValidateCISArea(CISArea))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
+        //validate CIS Book entry
+        public static bool ValidateCISArea(string CISArea)
+        {
+            if (String.IsNullOrEmpty(CISArea))
+            {
+                MessageBox.Show("There must be at least one CISArea !");
+                return false;
+            }
+
+            return true;
+        }
+        //validate product
+        public static bool ValidateDVD(string leadActor, string releaseDate, string runTime)
+        {
+            if (ValidateDVDLeadActor(leadActor) && ValidateDVDReleaseDate(releaseDate) && ValidateDVDRunTime(runTime))
+            {
+                return true;
+            }
+
+           
+            else
+            {
+                return false;
+            }
+
+        }
+    
+
+
         //validate DVD entry
         public static bool ValidateDVDLeadActor(string leadActor)
         {
@@ -183,7 +229,12 @@ namespace BookCDDVD_Project.Classes
                 MessageBox.Show("Lead Actor is blank!");
                 return false;
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(leadActor, @"^\s *[A - Za - z] + (?:\s +[A - Za - z] +) *\s *$"))
+            try
+            {
+                Convert.ToString(leadActor);
+
+            }
+            catch
             {
                 MessageBox.Show("Lead Actor cannot contain numbers");
                 return false;

@@ -12,6 +12,7 @@ namespace BookCDDVD_Project.Classes
     class BookCIS : Book
     {
         private string hiddenCISArea;
+        
 
         public BookCIS()
         {
@@ -21,7 +22,7 @@ namespace BookCDDVD_Project.Classes
         public BookCIS(int UPC, decimal price, string title, int quantity, int ISBN, string author, int pages, string CISArea) : base(UPC, price, title, quantity, ISBN, author, pages)
         {
 
-            hiddenCISArea = CISArea;
+            this.hiddenCISArea = CISArea;
         }  // end Employee Parameterized Constructor
         // Accessor/mutator for CIS Book CISArea
         public string CISArea
