@@ -569,6 +569,7 @@
             this.btnFind.TabIndex = 52;
             this.btnFind.Text = "Find/Display\r\n\r\n";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnEdit
             // 

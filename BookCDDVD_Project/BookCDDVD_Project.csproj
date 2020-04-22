@@ -50,6 +50,7 @@
     <Compile Include="Classes\BookCIS.cs" />
     <Compile Include="Classes\DVD.cs" />
     <Compile Include="Classes\Form Controller.cs" />
+    <Compile Include="Classes\SFManager.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\ProductDB.cs" />
     <Compile Include="Classes\ProductList.cs" />

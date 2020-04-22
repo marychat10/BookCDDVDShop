@@ -418,7 +418,68 @@ namespace BookCDDVD_Project
             }  // end outer else
         }  // end Create DVD Object
 
-       
+
+        //this is a static variable to be referenced throughout the form code behind
+        ProductDB pdb = new ProductDB(); // Creates new productDB object
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            bool temp = Validation.ValidateProductUPC(txtUPC.Text); //first make sure the format is correct
+            if (temp)
+            {
+                bool found; // boolean reference for search success
+                string pstring; // Product string updated upon product DB search call.
+                Product prod;
+
+                //  this returns an OleDbDataReader object, but you don't really need to use it
+                //  the boolean flag and string that are returned are important
+                //  pstring will hold the attributes of a product from the database in a single string, separated by newline characters
+                //  split it below 
+
+                OleDbDataReader odb = pdb.SelectProductFromProduct(Convert.ToInt32(txtUPC.Text), out found, out pstring);
+
+                if (!found) //not found
+                {
+                    MessageBox.Show("Product not found");
+                    txtUPC.Clear();
+                    txtUPC.Focus();
+
+                } // Creates a new product to display in form.
+                else
+                {
+                    string[] attributes = pstring.Split('\n'); // splits product attributes into array
+
+                    for (int i = 0; i < attributes.Length; i++)
+                    {
+                        attributes[i] = attributes[i].Trim('\r'); // clears "junk" from each field
+                    }
+
+                    string ptype = attributes[4]; // gets the product type from this attribute and then creates new product to display in form
+
+                    if (ptype == "DVD")
+                    {
+                        prod = new DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                            attributes[5], DateTime.Parse(attributes[6]), Convert.ToInt32(attributes[7]));
+                        prod.Display(this);
+                        //FormController.searchForm(this);
+                        txtUPC.Clear();
+                    }
+                    /*
+                     *
+                     * add else ifs for the other product types and handle each accordingly
+                     *
+                     */
+                    else
+                    {
+                        // this is an invalid record (since it does not fit one of our types)
+                    }
+                }
+            }
+            else
+            {
+                // UPC is invalid
+            }
+        }
     }
 }
 
