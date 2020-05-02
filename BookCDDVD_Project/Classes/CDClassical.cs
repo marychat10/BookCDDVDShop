@@ -45,7 +45,7 @@ namespace BookCDDVD_Project.Classes
 
 
         // Accessor/mutator for Book Author
-        public string BookAuthor
+        public string CDArtists
         {
             get
             {

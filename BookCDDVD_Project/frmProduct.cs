@@ -110,7 +110,7 @@ namespace BookCDDVD_Project
             toolTip1.SetToolTip(txtCDLabel, ttCDClassicalLabel);
             toolTip1.SetToolTip(txtArtists, ttCDClassicalArtists);
             toolTip1.SetToolTip(txtConductor, ttCDOrchestraConductor);
-            toolTip1.SetToolTip(comboInstruments, ttCDChamberInstrumentList);
+            toolTip1.SetToolTip(txtInstruments, ttCDChamberInstrumentList);
             toolTip1.SetToolTip(comboCISArea, ttBookCISCISArea);
             toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
         } // end frmEBookCDDVDShop_Load
@@ -533,7 +533,13 @@ namespace BookCDDVD_Project
             }
         }
 
-<<<<<<< HEAD
+        private Boolean findAnItem(string Edit)
+        {
+
+            return true;
+        }
+
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             bool success;
@@ -556,49 +562,49 @@ namespace BookCDDVD_Project
                     FormController.activateCDChamber(this);
                     FormController.deactivateAllButCDChamber(this);
                     FormController.deactivateAddButtons(this);
-                    txtCDClassicalLabel.Text = ((CDClassical)p).CDClassicalLabel;
-                    txtCDClassicalArtists.Text = ((CDClassical)p).CDClassicalArtists;
-                    txtCDChamberInstrumentList.Text =
-                    ((CDChamber)p).getCDChamberInstrumentList();
+                    txtLabel.Text = ((CDClassical)p).CDLabel;
+                    txtArtists.Text = ((CDClassical)p).CDArtists;
+                    txtInstruments.Text =
+                    ((CDChamber)p).CDInstrumentList;
                 }
                 else if (p.GetType() == typeof(CDOrchestra))
                 {
                     FormController.activateCDOrchestra(this);
                     FormController.deactivateAllButCDOrchestra(this);
-                    txtCDClassicalLabel.Text = ((CDClassical)p).CDClassicalLabel;
-                    txtCDClassicalArtists.Text = ((CDClassical)p).CDClassicalArtists;
-                    txtCDOrchestraConductor.Text =
-                    ((CDOrchestra)p).CDOrchestraConductor();
+                    txtLabel.Text = ((CDClassical)p).CDLabel;
+                    txtArtists.Text = ((CDClassical)p).CDArtists;
+                    txtConductor.Text = ((CDOrchestra)p).CDConductor;
                 }
                 else if (p.GetType() == typeof(Book))
                 {
                     FormController.activateBook(this);
                     FormController.deactivateAllButBook(this);
                     FormController.deactivateAddButtons(this);
-                    txtBookISBNLeft.Text = (((Book)p).BookISBNLeft).ToString();
+                    txtISBNLeft.Text = (((Book)p).BookISBN).ToString().Substring(0, 3);
 
-                    txtBookISBNRight.Text = (((Book)p).BookISBNRight).ToString();
-                    txtBookAuthor.Text = ((Book)p).BookAuthor;
-                    txtBookPages.Text = ((Book)p).BookPages.ToString();
+                    txtISBNRight.Text = (((Book)p).BookISBN).ToString().Substring(3, 6);
+                    txtAuthor.Text = ((Book)p).BookAuthor;
+                    txtPages.Text = ((Book)p).BookPages.ToString();
                 }
                 else if (p.GetType() == typeof(BookCIS))
                 {
                     FormController.activateBookCIS(this);
                     FormController.deactivateAllButBookCIS(this);
-                    txtBookISBNLeft.Text = (((Book)p).BookISBNLeft).ToString();
-                    txtBookISBNRight.Text = (((Book)p).BookISBNRight).ToString();
-                    txtBookAuthor.Text = ((Book)p).BookAuthor;
-                    txtBookPages.Text = (((Book)p).BookPages).ToString();
-                    txtBookCISCISArea.Text = ((BookCIS)p).BookCISCISArea; ;
+                    txtISBNLeft.Text = (((Book)p).BookISBN).ToString().Substring(0, 3);
+
+                    txtISBNRight.Text = (((Book)p).BookISBN).ToString().Substring(3, 6);
+                    txtAuthor.Text = ((Book)p).BookAuthor;
+                    txtPages.Text = ((Book)p).BookPages.ToString();
+                    comboCISArea.Text = ((BookCIS)p).CISArea; ;
                 } // end multiple alternative if
                 else if (p.GetType() == typeof(DVD))
                 {
                     FormController.activateDVD(this);
                     FormController.deactivateAllButDVD(this);
-                    txtDVDLeadActor.Text = ((DVD)p).DVDLeadActor;
-                    txtDVDReleaseDate.Text =
-                    ((DateTime)((DVD)p).DVDReleaseDate).ToString(" mm / dd / yyyy");
-                    txtDVDRunTime.Text = (((DVD)p).DVDRunTime).ToString();
+                    txtLeadActor.Text = ((DVD)p).LeadActor;
+                    txtReleaseDate.Text =
+                    ((DateTime)((DVD)p).releaseDate).ToString(" mm / dd / yyyy");
+                    txtRunTime.Text = (((DVD)p).runTime).ToString();
                 }
                 else
                 {
@@ -607,7 +613,7 @@ namespace BookCDDVD_Project
                 } // end multiple alternative if
             } // end if on success
         } // end btnEdit_Click
-=======
+
         private void btnCreateCDOrc_Click(object sender, EventArgs e)
         {
             txtUPC.Focus();
@@ -735,7 +741,7 @@ namespace BookCDDVD_Project
                 toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDChamber);
             }
         }
->>>>>>> 5eb5dedbf715a8d71a71c0bfafae34e09ba83883
+
     }
 }
     

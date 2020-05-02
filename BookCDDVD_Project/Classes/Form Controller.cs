@@ -59,7 +59,7 @@ namespace BookCDDVDShop
             f.txtRunTime.Enabled = false;
             f.txtCDLabel.Enabled = false;
             f.txtArtists.Enabled = false;
-            f.comboInstruments.Enabled = false;
+            f.txtInstruments.Enabled = false;
             f.txtConductor.Enabled = false;
             f.comboCISArea.Enabled = false;
         } // end resetForm
@@ -116,7 +116,7 @@ namespace BookCDDVDShop
             f.txtRunTime.Enabled = false;
             f.txtCDLabel.Enabled = false;
             f.txtArtists.Enabled = false;
-            f.comboInstruments.Enabled = false;
+            f.txtInstruments.Enabled = false;
             f.txtConductor.Enabled = false;
             f.comboCISArea.Enabled = false;
 
@@ -139,7 +139,7 @@ namespace BookCDDVDShop
             f.txtPages.Text = "";
             f.txtCDLabel.Text = "";
             f.txtArtists.Text = "";
-            f.comboInstruments.Text = "";
+            f.txtInstruments.Text = "";
             f.txtConductor.Text = "";
             f.comboCISArea.Text = "";
             f.txtLeadActor.Text = "";
@@ -222,7 +222,7 @@ namespace BookCDDVDShop
             f.txtLeadActor.Enabled = false;
             f.txtReleaseDate.Enabled = false;
             f.txtRunTime.Enabled = false;
-            f.comboInstruments.Enabled = false;
+            f.txtInstruments.Enabled = false;
             f.txtConductor.Enabled = false;
             f.comboCISArea.Enabled = false;
             f.txtISBNLeft.BackColor = Color.Red;
@@ -232,7 +232,7 @@ namespace BookCDDVDShop
             f.txtLeadActor.BackColor = Color.Red;
             f.txtReleaseDate.BackColor = Color.Red;
             f.txtRunTime.BackColor = Color.Red;
-            f.comboInstruments.BackColor = Color.Red;
+            f.txtInstruments.BackColor = Color.Red;
             f.txtConductor.BackColor = Color.Red;
             f.comboCISArea.BackColor = Color.Red;
 
@@ -288,8 +288,8 @@ namespace BookCDDVDShop
       public static void activateCDChamber(frmBookCDDVD f)
         {
             activateCDClassical(f); // CD Classical must be activated too
-            f.comboInstruments.BackColor = Color.LimeGreen;
-            f.comboInstruments.Enabled = true;
+            f.txtInstruments.BackColor = Color.LimeGreen;
+            f.txtInstruments.Enabled = true;
         } // end activateCDCLChamber
 
         // Enables Worker textboxes and highlights the Graduate Student groupbox
@@ -355,8 +355,8 @@ namespace BookCDDVDShop
         // Disables CDClChamber textboxes and highlights the CD Chamber groupbox
         public static void deactivateCDChamber(frmBookCDDVD f)
         {
-            f.comboInstruments.BackColor = Color.Red;
-            f.comboInstruments.Enabled = false;
+            f.txtInstruments.BackColor = Color.Red;
+            f.txtInstruments.Enabled = false;
         } // end deactivateCDChamber
 
         // Disables CD Orchestra textboxes and the CD Orchestra groupbox

@@ -40,7 +40,7 @@ namespace BookCDDVD_Project.Classes
         public override void Save(frmBookCDDVD f)
         {
             base.Save(f);
-            hiddenInstrumentList = f.comboInstruments.Text;
+            hiddenInstrumentList = f.txtInstruments.Text;
         } // end Save
 
 
@@ -48,7 +48,7 @@ namespace BookCDDVD_Project.Classes
         public override void Display(frmBookCDDVD f)
         {
             base.Display(f);
-            f.comboInstruments.Text =  hiddenInstrumentList;
+            f.txtInstruments.Text =  hiddenInstrumentList;
         }  // end Display
 
 
