@@ -310,6 +310,43 @@ namespace BookCDDVD_Project.Classes
 
 
         // Validate CD Entry
+        public static bool ValidateCD(string label, string artists, string conductor, string instrumentList)
+        {
+            if (ValidateCDLabel(label) && ValidateCDArtists(artists) && ValidateCDConductor(conductor) && ValidateCDInstrumentList(instrumentList))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public static bool ValidateCDOrchestra(string conductor)
+        {
+            if (ValidateCDConductor(conductor))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool ValidateCDChamber(string instruments)
+        {
+            if (ValidateCDInstrumentList(instruments))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static bool ValidateCDLabel(string label)
         {
             if(String.IsNullOrEmpty(label))
