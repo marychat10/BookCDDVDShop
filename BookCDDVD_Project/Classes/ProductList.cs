@@ -1,4 +1,4 @@
-﻿q   using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +40,14 @@ namespace BookCDDVD_Project.Classes
         } // end set
 
 
-        
+        public int Count()
+        {
+            return (hiddenProductList.Count);
+
+        }
+
+
+
 
     }
 }

@@ -580,6 +580,7 @@
             this.btnEdit.TabIndex = 53;
             this.btnEdit.Text = "Edit/Update\r\n";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 

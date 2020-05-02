@@ -12,13 +12,13 @@ namespace BookCDDVD_Project.Classes
     class BookCIS : Book
     {
         private string hiddenCISArea;
-        
+
 
         public BookCIS()
         {
             hiddenCISArea = "";
         }
-        // Parameterized Constructor
+       // Parameterized Constructor
         public BookCIS(int UPC, decimal price, string title, int quantity, int ISBN, string author, int pages, string CISArea) : base(UPC, price, title, quantity, ISBN, author, pages)
         {
 

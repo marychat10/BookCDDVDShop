@@ -10,21 +10,21 @@ namespace BookCDDVD_Project.Classes
     class DVD : Product
     {
         private string hiddenLeadActor;
-        private string hiddenReleaseDate;
+        private DateTime hiddenReleaseDate;
         private int hiddenRunTime;
 
         public DVD()
         {
             hiddenLeadActor = "";
-            hiddenReleaseDate = "";
-            //hiddenReleaseDate = Convert.ToDateTime(01 / 01 / 0001) ;
+            
+            hiddenReleaseDate = Convert.ToDateTime(01 / 01 / 0001) ;
             hiddenRunTime = 0;
 
         } // end DVD Parameterless Constructor
 
 
         // Parameterized Constructor
-        public DVD(int UPC, decimal price, string title, int quantity, string leadActor, string releaseDate, int runTime) : base(UPC, price, title, quantity)
+        public DVD(int UPC, decimal price, string title, int quantity, string leadActor, DateTime releaseDate, int runTime) : base(UPC, price, title, quantity)
         {
             hiddenLeadActor= leadActor;
             hiddenReleaseDate = releaseDate;
@@ -47,7 +47,7 @@ namespace BookCDDVD_Project.Classes
 
 
         // Accessor/mutator for release date
-        public String releaseDate
+        public DateTime releaseDate
         {
             get
             {
@@ -77,7 +77,7 @@ namespace BookCDDVD_Project.Classes
         {
             base.Save(f);
             hiddenLeadActor = f.txtLeadActor.Text;
-            hiddenReleaseDate = f.txtReleaseDate.Text;
+            hiddenReleaseDate = Convert.ToDateTime(f.txtReleaseDate.Text);
             hiddenRunTime= Convert.ToInt32(f.txtRunTime.Text);
         } // end Save
 
