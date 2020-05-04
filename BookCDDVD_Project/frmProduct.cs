@@ -321,18 +321,22 @@ namespace BookCDDVD_Project
                 // Set up form for Undergrad processing
                 DisplayBookForm();
                 txtUPC.Focus();
+                btnCreateCDChamber.Enabled = false;
+                btnCreateCDOrc.Enabled = false;
+                btnCreateCISBook.Enabled = false;
+                btnCreateDVD.Enabled = false;
             }
 
             else
             {
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
-                //if (lookForDuplicate(Convert.ToInt32(txtUPC.Text)))
-                //{
-                //    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
-                //        MessageBoxButtons.OK);
-                //    return;
-                //}
+                if (lookForDuplicate(txtUPC.Text))
+                {
+                    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
+                        MessageBoxButtons.OK);
+                    return;
+                }
                 // Save an  if data is OK
                 if (ValidateProduct() == false) return;
                 string ISBN = txtISBNLeft.Text + txtISBNRight.Text;
@@ -380,17 +384,21 @@ namespace BookCDDVD_Project
                 // Set up form for Undergrad processing
                 DisplayCISBookForm();
                 txtUPC.Focus();
+                btnCreateDVD.Enabled = false;
+                btnCreateBook.Enabled = false;
+                btnCreateCDChamber.Enabled = false;
+                btnCreateCDOrc.Enabled = false;
             }
             else
             {
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
-                //if (lookForDuplicate(Convert.ToInt32(txtUPC.Text)))
-                //{
-                //    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
-                //        MessageBoxButtons.OK);
-                //    return;
-                //}
+                if (lookForDuplicate(txtUPC.Text))
+                {
+                    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
+                        MessageBoxButtons.OK);
+                    return;
+                }
                 // Save an  if data is OK
 
                 if (ValidateProduct() == false) return;
@@ -447,17 +455,21 @@ namespace BookCDDVD_Project
                 // Set up form for Undergrad processing
                 DisplayDVDForm();
                 txtUPC.Focus();
+                btnCreateCISBook.Enabled = false;
+                btnCreateBook.Enabled = false;
+                btnCreateCDChamber.Enabled = false;
+                btnCreateCDOrc.Enabled = false;
             }
             else
             {
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
-                //if (lookForDuplicate(Convert.ToInt32(txtUPC.Text)))
-                //{
-                //    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
-                //        MessageBoxButtons.OK);
-                //    return;
-                //}
+                if (lookForDuplicate(txtUPC.Text))
+                {
+                    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
+                        MessageBoxButtons.OK);
+                    return;
+                }
                 // Save an  if data is OK
                 if (ValidateProduct() == false) return;
                 if (Validation.ValidateDVD(txtLeadActor.Text, txtReleaseDate.Text, txtRunTime.Text) == false)
@@ -704,17 +716,21 @@ namespace BookCDDVD_Project
                 // Set up form for Undergrad processing
                 DisplayCDOrchestraForm();
                 txtUPC.Focus();
+                btnCreateCISBook.Enabled = false;
+                btnCreateBook.Enabled = false;
+                btnCreateCDChamber.Enabled = false;
+                btnCreateDVD.Enabled = false;
             }
             else 
             {
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
-                //if (lookForDuplicate(Convert.ToInt32(txtUPC.Text)))
-                //{
-                //    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
-                //        MessageBoxButtons.OK);
-                //    return;
-                //}
+                if (lookForDuplicate(txtUPC.Text))
+                {
+                    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
+                        MessageBoxButtons.OK);
+                    return;
+                }
                 // Save an  if data is OK
 
                 if (Validation.ValidateCD(txtCDLabel.Text, txtArtists.Text, txtConductor.Text, txtInstruments.Text) == false)
@@ -768,18 +784,22 @@ namespace BookCDDVD_Project
                 // Set up form for Undergrad processing
                 DisplayCDChamberForm();
                 txtUPC.Focus();
+                btnCreateCISBook.Enabled = false;
+                btnCreateBook.Enabled = false;
+                btnCreateDVD.Enabled = false;
+                btnCreateCDOrc.Enabled = false;
             }
 
             else
             {
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
-                //if (lookForDuplicate(Convert.ToInt32(txtUPC.Text)))
-                //{
-                //    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
-                //        MessageBoxButtons.OK);
-                //    return;
-                //}
+                if (lookForDuplicate(txtUPC.Text))
+                    {
+                        MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
+                            MessageBoxButtons.OK);
+                        return;
+                    }
                 // Save an  if data is OK
 
                 if (Validation.ValidateCD(txtCDLabel.Text, txtArtists.Text, txtConductor.Text, txtInstruments.Text) == false)
@@ -823,5 +843,42 @@ namespace BookCDDVD_Project
                 toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDChamber);
             }
         }
+
+        private bool lookForDuplicate(string UPC)
+        {
+            if (thisProductList.UPCMatch(UPC))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void getItem(int i)
+        {
+            if (thisProductList.Count() == 0)
+            {
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
+                // btnToString.Enabled = false;
+                lblUserMessage.Text = "Please select an operation";
+            }
+            else if (i < 0 || i >= thisProductList.Count())
+            {
+                MessageBox.Show("getItem error: index out of range");
+                return;
+            }
+            else
+            {
+                currentIndex = i;
+                thisProductList.getAnItem(i).Display(this);
+                lblUserMessage.Text = "Object Type: " +
+                   thisProductList.getAnItem(i).GetType().ToString() +
+                   " List Index: " + i.ToString();
+                btnFind.Enabled = true;
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
+            }  // end else
+        } // end getItem
+
     }
 }

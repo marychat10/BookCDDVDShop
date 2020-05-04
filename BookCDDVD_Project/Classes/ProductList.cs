@@ -21,7 +21,7 @@ namespace BookCDDVD_Project.Classes
         {
 
         }
-        //Add an Product to List
+        //Add a Product to List
 
         public void Add(Product p)
         {
@@ -52,11 +52,12 @@ namespace BookCDDVD_Project.Classes
         {
             foreach(Product p in hiddenProductList)
             {
-                MessageBox.Show("Product Information Added:" + "\r\n" + "Title:" +  p.ProductTitle.ToString() + "\r\n" + "UPC:" + p.ProductUPC.ToString() + "\r\n" + "Quantity:" + p.ProductQuantity.ToString() + "\r\n"
-                    + "Price:" + p.ProductPrice.ToString());
+                MessageBox.Show("Product Information Added:" + "\r\n" + "Title:" + p.ProductTitle + "\r\n" + "UPC:" + p.ProductUPC.ToString() + "\r\n" + "Quantity:" + p.ProductQuantity.ToString() + "\r\n"
+                    + "Price: $" + p.ProductPrice.ToString("0.00"));
+
 
             }
-            
+
         }
 
         //IF mathcing UPC was found returns true
