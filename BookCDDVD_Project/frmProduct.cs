@@ -350,11 +350,9 @@ namespace BookCDDVD_Project
                     return;
                 }  // end inner if then
 
-                //dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                //    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                //dbFunctions.InsertCDClassical(Convert.ToInt32(txtProductUPC.Text), txtCDClassicalLabel.Text,
-                //    txtCDClassicalArtists.Text);
-                //dbFunctions.InsertCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
+                dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "Book");
+                dbFunctions.InsertBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(txtISBNLeft.Text + txtISBNRight.Text), txtAuthor.Text, Convert.ToInt32(txtPages.Text));
 
                 Book thisBookObject = new Book();
                 thisBookObject.Save(this);
@@ -420,11 +418,10 @@ namespace BookCDDVD_Project
 
                 // end inner if then
 
-                //dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                //    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                //dbFunctions.InsertCDClassical(Convert.ToInt32(txtProductUPC.Text), txtCDClassicalLabel.Text,
-                //    txtCDClassicalArtists.Text);
-                //dbFunctions.InsertCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
+                dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "BookCIS");
+                dbFunctions.InsertBook(Convert.ToInt32(txtUPC.Text), Convert.ToInt32(txtISBNLeft.Text + txtISBNRight.Text), txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+                dbFunctions.InsertBookCIS(Convert.ToInt32(txtUPC.Text), comboCISArea.Text);
 
                 BookCIS thisBookCISObject = new BookCIS();
                 thisBookCISObject.Save(this);
@@ -475,11 +472,10 @@ namespace BookCDDVD_Project
                     return;
                 }  // end inner if then
 
-                //dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                //    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                //dbFunctions.InsertCDClassical(Convert.ToInt32(txtProductUPC.Text), txtCDClassicalLabel.Text,
-                //    txtCDClassicalArtists.Text);
-                //dbFunctions.InsertCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
+                dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "DVD");
+                dbFunctions.InsertDVD(Convert.ToInt32(txtUPC.Text), txtLeadActor.Text,
+                    Convert.ToDateTime(txtReleaseDate.Text), Convert.ToInt32(txtRunTime.Text));
 
                 DVD thisDVDObject = new DVD();
                 thisDVDObject.Save(this);
@@ -745,11 +741,11 @@ namespace BookCDDVD_Project
 
                 // end inner if then
 
-                //dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                //    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                //dbFunctions.InsertCDClassical(Convert.ToInt32(txtProductUPC.Text), txtCDClassicalLabel.Text,
-                //    txtCDClassicalArtists.Text);
-                //dbFunctions.InsertCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
+                dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "CDOrchestra");
+                dbFunctions.InsertCDClassical(Convert.ToInt32(txtUPC.Text), txtCDLabel.Text,
+                    txtArtists.Text);
+                dbFunctions.InsertCDOrchestra(Convert.ToInt32(txtUPC.Text), txtConductor.Text);
 
                 CDOrchestra thisCDOrchestraObject = new CDOrchestra();
                 thisCDOrchestraObject.Save(this);
@@ -810,11 +806,11 @@ namespace BookCDDVD_Project
 
                 // end inner if then
 
-                //dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                //    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                //dbFunctions.InsertCDClassical(Convert.ToInt32(txtProductUPC.Text), txtCDClassicalLabel.Text,
-                //    txtCDClassicalArtists.Text);
-                //dbFunctions.InsertCDChamber(Convert.ToInt32(txtProductUPC.Text), txtCDChamberInstrumentList.Text);
+                dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "CDChamber");
+                dbFunctions.InsertCDClassical(Convert.ToInt32(txtUPC.Text), txtCDLabel.Text,
+                    txtArtists.Text);
+                dbFunctions.InsertCDChamber(Convert.ToInt32(txtUPC.Text), txtInstruments.Text);
 
                 CDChamber thisCDChamberObject = new CDChamber();
                 thisCDChamberObject.Save(this);
