@@ -10,21 +10,21 @@ namespace BookCDDVD_Project.Classes
 
     class CDChamber : CDClassical
     {
-        private string[] hiddenInstrumentList;
+        private string hiddenInstrumentList;
 
         public CDChamber()
         {
         }
 
         // Parameterized Constructor
-        public CDChamber(int UPC, decimal price, string title, int quantity, string label, string[] artists, string[] instrumentList) : base(UPC, price, title, quantity, label, artists)
+        public CDChamber(int UPC, decimal price, string title, int quantity, string label, string artists, string instrumentList) : base(UPC, price, title, quantity, label, artists)
         {
             hiddenInstrumentList = instrumentList;
         }  // end Employee Parameterized Constructor
 
 
         // Accessor/mutator for Book ISBN
-        public string[] CDInstrumentList
+        public string CDInstrumentList
         {
             get
             {
@@ -40,7 +40,7 @@ namespace BookCDDVD_Project.Classes
         public override void Save(frmBookCDDVD f)
         {
             base.Save(f);
-            hiddenInstrumentList = (f.txtInstruments.Text).Split(',');
+            hiddenInstrumentList = f.txtInstruments.Text;
         } // end Save
 
 
@@ -48,7 +48,7 @@ namespace BookCDDVD_Project.Classes
         public override void Display(frmBookCDDVD f)
         {
             base.Display(f);
-            f.txtInstruments.Text = string.Join(",", hiddenInstrumentList);
+            f.txtInstruments.Text =  hiddenInstrumentList;
         }  // end Display
 
 

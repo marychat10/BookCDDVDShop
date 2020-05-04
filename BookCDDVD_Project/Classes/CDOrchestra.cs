@@ -20,7 +20,7 @@ namespace BookCDDVD_Project.Classes
             hiddenConductor = "";
         }
         // Parameterized Constructor
-        public CDOrchestra(int UPC, decimal price, string title, int quantity, string label, string[] artists, string conductor) : base(UPC, price, title, quantity, label, artists)
+        public CDOrchestra(int UPC, decimal price, string title, int quantity, string label, string artists, string conductor) : base(UPC, price, title, quantity, label, artists)
         {
             hiddenConductor = conductor;
         }  // end Employee Parameterized Constructor

@@ -15,7 +15,7 @@ namespace BookCDDVD_Project.Classes
     class CDClassical : Product
     {
         private string hiddenLabel;
-        private string[] hiddenArtists;
+        private string hiddenArtists;
 
         public CDClassical()
         {
@@ -23,7 +23,7 @@ namespace BookCDDVD_Project.Classes
 
 
         // Parameterized Constructor
-        public CDClassical(int UPC, decimal price, string title, int quantity, string label, string[] artists) : base(UPC, price, title, quantity)
+        public CDClassical(int UPC, decimal price, string title, int quantity, string label, string artists) : base(UPC, price, title, quantity)
         {
             hiddenLabel = label;
             hiddenArtists = artists;
@@ -45,7 +45,7 @@ namespace BookCDDVD_Project.Classes
 
 
         // Accessor/mutator for Book Author
-        public string[] CDArtists
+        public string CDArtists
         {
             get
             {
@@ -63,7 +63,7 @@ namespace BookCDDVD_Project.Classes
         {
             base.Save(f);
             hiddenLabel = f.txtCDLabel.Text;
-            hiddenArtists = (f.txtArtists.Text).Split(',');
+            hiddenArtists = f.txtArtists.Text;
         } // end Save
 
 
@@ -72,7 +72,7 @@ namespace BookCDDVD_Project.Classes
         {
             base.Display(f);
             f.txtCDLabel.Text = hiddenLabel;
-            f.txtArtists.Text = string.Join(",", hiddenArtists);
+            f.txtArtists.Text =  hiddenArtists.ToString();
         }  // end Display
 
 

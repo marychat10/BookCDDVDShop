@@ -1,23 +1,4 @@
-﻿/*
- * Authors: Nick Filauro & Erika Gepilano
- * April 2016 * Version 1
- *
- * Updated 11/18/2016 * Version 2 * Elliot Stoner
- * Updated 06/17/2017 * Version 3 * Frank Friedman
- * Updated 06/30/2018 * Version 4 * Frank Friedman
- * Updated 06/20/2019 * Version 5 * Frank Friedman
- *
- * Purpose: A class that interacts and performs database operations for Product
- * in a Microsoft Access database using an OLEDB Data Reader.
- * It will contain methods for CRUD(Create, Read, Update, Delete) operations.
-
-*
-* !! Requirements !!
- * You must have the Access Database Engine installed on the system you are running the program on.
- * https://www.microsoft.com/en-us/download/details.aspx?id=13255
- * 
- * No constructors were written
- */
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -976,3 +957,4 @@ namespace BookCDDVDShop_Project.Classes
         }  // end Delete
     } // end of Product class
 } // end Namespace
+
