@@ -59,7 +59,7 @@ namespace BookCDDVDShop
             f.txtRunTime.Enabled = false;
             f.txtCDLabel.Enabled = false;
             f.txtArtists.Enabled = false;
-            f.comboInstruments.Enabled = false;
+            f.txtInstruments.Enabled = false;
             f.txtConductor.Enabled = false;
             f.comboCISArea.Enabled = false;
         } // end resetForm
@@ -120,7 +120,7 @@ namespace BookCDDVDShop
             f.txtPages.Text = "";
             f.txtCDLabel.Text = "";
             f.txtArtists.Text = "";
-            f.comboInstruments.Text = "";
+            f.txtInstruments.Text = "";
             f.txtConductor.Text = "";
             f.comboCISArea.Text = "";
             f.txtLeadActor.Text = "";

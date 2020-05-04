@@ -26,10 +26,6 @@ using System.Text;
 using System.IO;
 using System.Data.OleDb;
 using System.Windows.Forms;
-<<<<<<< HEAD
-
-=======
->>>>>>> 237f64745d68d56211c38bd8b1b7dd2dbe9e79dd
 
 namespace BookCDDVDShop_Project.Classes
 {
@@ -980,8 +976,3 @@ namespace BookCDDVDShop_Project.Classes
         }  // end Delete
     } // end of Product class
 } // end Namespace
-<<<<<<< HEAD
-
-    
-=======
->>>>>>> 237f64745d68d56211c38bd8b1b7dd2dbe9e79dd

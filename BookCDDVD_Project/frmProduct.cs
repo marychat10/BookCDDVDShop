@@ -110,7 +110,7 @@ namespace BookCDDVD_Project
             toolTip1.SetToolTip(txtCDLabel, ttCDClassicalLabel);
             toolTip1.SetToolTip(txtArtists, ttCDClassicalArtists);
             toolTip1.SetToolTip(txtConductor, ttCDOrchestraConductor);
-            toolTip1.SetToolTip(comboInstruments, ttCDChamberInstrumentList);
+            toolTip1.SetToolTip(txtInstruments, ttCDChamberInstrumentList);
             toolTip1.SetToolTip(comboCISArea, ttBookCISCISArea);
             toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
         } // end frmEBookCDDVDShop_Load
@@ -459,9 +459,9 @@ namespace BookCDDVD_Project
 
                     if (ptype == "DVD")
                     {
-                        prod = new DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                            attributes[5], DateTime.Parse(attributes[6]), Convert.ToInt32(attributes[7]));
-                        prod.Display(this);
+                        //prod = new DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
+                        //    attributes[5], DateTime.Parse(attributes[6]), Convert.ToInt32(attributes[7]));
+                        //prod.Display(this);
                         //FormController.searchForm(this);
                         txtUPC.Clear();
                     }
@@ -611,9 +611,3 @@ namespace BookCDDVD_Project
         }
     }
 }
-
-
-
-
-
-
