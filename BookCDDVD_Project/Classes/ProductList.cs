@@ -97,7 +97,22 @@ namespace BookCDDVD_Project.Classes
             return -1;
         }
 
-        
+        public bool findUPC(string UPC)
+        {
+            for (int i = 0; i > hiddenProductList.Count();)
+            {
+                if (UPC == hiddenProductList[i].ProductUPC.ToString())
+                {
+                    return true;
+
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return false;
+        }
 
 
 
