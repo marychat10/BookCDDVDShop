@@ -35,7 +35,7 @@ namespace BookCDDVDShop
             f.btnCreateBook.Enabled = true;
             f.btnCreateBook.Text = "Create Book";
             f.btnCreateCISBook.Enabled = true;
-            f.btnCreateCISBook.Text = "Create Book CIS";
+            f.btnCreateCISBook.Text = "Create CIS Book";
             f.btnCreateCDOrc.Enabled = true;
             f.btnCreateCDOrc.Text = "Create CD Orchestra";
             f.btnCreateCDChamber.Enabled = true;

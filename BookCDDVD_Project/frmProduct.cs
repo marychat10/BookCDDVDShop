@@ -271,6 +271,44 @@ namespace BookCDDVD_Project
         } // end DVD Form 
 
 
+        public void DisplayCDOrchestraForm()
+        {
+            // Display form for Create/Insert or Find/SELECT or Edit/Update or Delete a Book
+
+            btnCreateCDOrc.Text = "Save CD";
+            FormController.formAddMode(this);
+            txtUPC.Enabled = true;
+            txtPrice.Enabled = true;
+            txtTitle.Enabled = true;
+            txtQuantity.Enabled = true;
+            txtArtists.Enabled = true;
+            txtCDLabel.Enabled = true;
+            txtConductor.Enabled = true;
+
+
+            toolTip1.SetToolTip(btnCreateCDOrc, ttSaveCDOrchestra);
+            txtUPC.Focus();
+        } // end DVD Form 
+
+        public void DisplayCDChamberForm()
+        {
+            // Display form for Create/Insert or Find/SELECT or Edit/Update or Delete a Book
+
+            btnCreateCDChamber.Text = "Save CD";
+            FormController.formAddMode(this);
+            txtUPC.Enabled = true;
+            txtPrice.Enabled = true;
+            txtTitle.Enabled = true;
+            txtQuantity.Enabled = true;
+            txtArtists.Enabled = true;
+            txtCDLabel.Enabled = true;
+            txtInstruments.Enabled = true;
+
+
+            toolTip1.SetToolTip(btnCreateCDChamber, ttSaveCDChamber);
+            txtUPC.Focus();
+        } // end DVD Form 
+
 
 
         //Create a book
@@ -284,6 +322,7 @@ namespace BookCDDVD_Project
                 DisplayBookForm();
                 txtUPC.Focus();
             }
+
             else
             {
                 if (ValidateProduct() == false) return;
@@ -666,13 +705,13 @@ namespace BookCDDVD_Project
         {
             txtUPC.Focus();
             btnEnterUPC.Enabled = false;
-            //if (btnCreateCDOrc.Text == "Create")
-            //{
-            //    // Set up form for Undergrad processing
-            //    DisplayCISBookForm();
-            //    txtUPC.Focus();
-            //}
-            //else
+            if (btnCreateCDOrc.Text == "Create CD Orchestra")
+            {
+                // Set up form for Undergrad processing
+                DisplayCDOrchestraForm();
+                txtUPC.Focus();
+            }
+            else 
             {
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
@@ -730,13 +769,14 @@ namespace BookCDDVD_Project
         {
             txtUPC.Focus();
             btnEnterUPC.Enabled = false;
-            //if (btnCreateCDOrc.Text == "Create")
-            //{
-            //    // Set up form for Undergrad processing
-            //    DisplayCISBookForm();
-            //    txtUPC.Focus();
-            //}
-            //else
+            if (btnCreateCDChamber.Text == "Create CD Chamber")
+            {
+                // Set up form for Undergrad processing
+                DisplayCDChamberForm();
+                txtUPC.Focus();
+            }
+
+            else
             {
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
@@ -789,14 +829,5 @@ namespace BookCDDVD_Project
                 toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDChamber);
             }
         }
-
     }
 }
-    
-
-
-
-
-
-
-
