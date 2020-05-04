@@ -782,20 +782,11 @@ namespace BookCDDVD_Project
 
         private bool lookForDuplicate(string UPC)
         {
-            if (thisProductList.Duplicate(UPC) ==true )
-
-        private void btnEnterUPC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool lookForDuplicate(string UPC)
-        {
-            if (thisProductList.findUPC(UPC))
-
+            if (thisProductList.Duplicate(UPC) == true)
             {
                 return true;
             }
+
             return false;
         }
 
@@ -826,6 +817,11 @@ namespace BookCDDVD_Project
             }  // end else
         } // end getItem
 
+
+        private void btnEnterUPC_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
     }
