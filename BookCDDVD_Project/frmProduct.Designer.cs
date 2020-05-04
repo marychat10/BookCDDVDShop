@@ -119,28 +119,18 @@
             // 
             // btnCreateBook
             // 
-<<<<<<< HEAD
             this.btnCreateBook.Location = new System.Drawing.Point(102, 222);
-=======
-            this.btnCreateBook.Location = new System.Drawing.Point(181, 344);
-            this.btnCreateBook.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnCreateBook.Name = "btnCreateBook";
             this.btnCreateBook.Size = new System.Drawing.Size(158, 45);
             this.btnCreateBook.TabIndex = 3;
             this.btnCreateBook.Text = "Create Book";
-            this.toolTip1.SetToolTip(this.btnCreateBook, "Click to enter Make Book mode to add a Book to the List of Products\r\n\r\n\r\n\r\n");
+            this.toolTip1.SetToolTip(this.btnCreateBook, "Click to enter Make Book mode to add a Book to the List of Products\r\n");
             this.btnCreateBook.UseVisualStyleBackColor = true;
             this.btnCreateBook.Click += new System.EventHandler(this.btnCreateBook_Click);
             // 
             // btnCreateCISBook
             // 
-<<<<<<< HEAD
             this.btnCreateCISBook.Location = new System.Drawing.Point(321, 222);
-=======
-            this.btnCreateCISBook.Location = new System.Drawing.Point(571, 344);
-            this.btnCreateCISBook.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnCreateCISBook.Name = "btnCreateCISBook";
             this.btnCreateCISBook.Size = new System.Drawing.Size(158, 45);
             this.btnCreateCISBook.TabIndex = 4;
@@ -151,34 +141,23 @@
             // 
             // btnCreateDVD
             // 
-<<<<<<< HEAD
             this.btnCreateDVD.Location = new System.Drawing.Point(541, 222);
-=======
-            this.btnCreateDVD.Location = new System.Drawing.Point(962, 344);
-            this.btnCreateDVD.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnCreateDVD.Name = "btnCreateDVD";
             this.btnCreateDVD.Size = new System.Drawing.Size(158, 45);
             this.btnCreateDVD.TabIndex = 5;
             this.btnCreateDVD.Text = "Create DVD";
-            this.toolTip1.SetToolTip(this.btnCreateDVD, "Click to enter Make DVD mode to add a DVD to the List of Products.");
+            this.toolTip1.SetToolTip(this.btnCreateDVD, "Click to enter Make DVD mode to add a DVD to the List of Products\r\n");
             this.btnCreateDVD.UseVisualStyleBackColor = true;
             this.btnCreateDVD.Click += new System.EventHandler(this.btnCreateDVD_Click);
             // 
             // btnCreateCDOrc
             // 
-<<<<<<< HEAD
             this.btnCreateCDOrc.Location = new System.Drawing.Point(748, 222);
-=======
-            this.btnCreateCDOrc.Location = new System.Drawing.Point(1330, 344);
-            this.btnCreateCDOrc.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnCreateCDOrc.Name = "btnCreateCDOrc";
             this.btnCreateCDOrc.Size = new System.Drawing.Size(201, 45);
             this.btnCreateCDOrc.TabIndex = 6;
             this.btnCreateCDOrc.Text = "Create CD Orchestra";
-            this.toolTip1.SetToolTip(this.btnCreateCDOrc, "Click to enter Make CDOrchestra mode to add a CDOrchestra to the List of Products" +
-        ".");
+            this.toolTip1.SetToolTip(this.btnCreateCDOrc, "Click to Save a CDOrchestra object to the List of Products");
             this.btnCreateCDOrc.UseVisualStyleBackColor = true;
             this.btnCreateCDOrc.Click += new System.EventHandler(this.btnCreateCDOrc_Click);
             // 
@@ -214,12 +193,7 @@
             // txtUPC
             // 
             this.txtUPC.Enabled = false;
-<<<<<<< HEAD
             this.txtUPC.Location = new System.Drawing.Point(173, 391);
-=======
-            this.txtUPC.Location = new System.Drawing.Point(308, 606);
-            this.txtUPC.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtUPC.Name = "txtUPC";
             this.txtUPC.Size = new System.Drawing.Size(124, 26);
             this.txtUPC.TabIndex = 11;
@@ -237,16 +211,11 @@
             // txtPrice
             // 
             this.txtPrice.Enabled = false;
-<<<<<<< HEAD
             this.txtPrice.Location = new System.Drawing.Point(433, 394);
-=======
-            this.txtPrice.Location = new System.Drawing.Point(770, 611);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(124, 26);
             this.txtPrice.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.txtPrice, "Enter dollars and cents >= 0.0. No $. Exactly two decimal digits\r\n\r\n");
+            this.toolTip1.SetToolTip(this.txtPrice, "Enter dollars and cents >= 0.0. NO $. Exactly two decimal digits");
             // 
             // lblProductTitle
             // 
@@ -260,12 +229,7 @@
             // txtTitle
             // 
             this.txtTitle.Enabled = false;
-<<<<<<< HEAD
             this.txtTitle.Location = new System.Drawing.Point(682, 394);
-=======
-            this.txtTitle.Location = new System.Drawing.Point(1212, 611);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(124, 26);
             this.txtTitle.TabIndex = 15;
@@ -284,12 +248,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Enabled = false;
-<<<<<<< HEAD
             this.txtQuantity.Location = new System.Drawing.Point(944, 391);
-=======
-            this.txtQuantity.Location = new System.Drawing.Point(1678, 606);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(124, 26);
             this.txtQuantity.TabIndex = 17;
@@ -298,12 +257,7 @@
             // btnClearForm
             // 
             this.btnClearForm.Enabled = false;
-<<<<<<< HEAD
             this.btnClearForm.Location = new System.Drawing.Point(1147, 345);
-=======
-            this.btnClearForm.Location = new System.Drawing.Point(2039, 535);
-            this.btnClearForm.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnClearForm.Name = "btnClearForm";
             this.btnClearForm.Size = new System.Drawing.Size(96, 77);
             this.btnClearForm.TabIndex = 18;
@@ -314,12 +268,7 @@
             // 
             // btnExit
             // 
-<<<<<<< HEAD
             this.btnExit.Location = new System.Drawing.Point(1147, 460);
-=======
-            this.btnExit.Location = new System.Drawing.Point(2039, 713);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(96, 77);
             this.btnExit.TabIndex = 19;
@@ -350,12 +299,7 @@
             // txtISBNLeft
             // 
             this.txtISBNLeft.Enabled = false;
-<<<<<<< HEAD
             this.txtISBNLeft.Location = new System.Drawing.Point(173, 499);
-=======
-            this.txtISBNLeft.Location = new System.Drawing.Point(308, 773);
-            this.txtISBNLeft.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtISBNLeft.Name = "txtISBNLeft";
             this.txtISBNLeft.Size = new System.Drawing.Size(57, 26);
             this.txtISBNLeft.TabIndex = 22;
@@ -374,12 +318,7 @@
             // txtISBNRight
             // 
             this.txtISBNRight.Enabled = false;
-<<<<<<< HEAD
             this.txtISBNRight.Location = new System.Drawing.Point(266, 500);
-=======
-            this.txtISBNRight.Location = new System.Drawing.Point(473, 775);
-            this.txtISBNRight.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtISBNRight.Name = "txtISBNRight";
             this.txtISBNRight.Size = new System.Drawing.Size(57, 26);
             this.txtISBNRight.TabIndex = 24;
@@ -397,12 +336,7 @@
             // txtAuthor
             // 
             this.txtAuthor.Enabled = false;
-<<<<<<< HEAD
             this.txtAuthor.Location = new System.Drawing.Point(433, 500);
-=======
-            this.txtAuthor.Location = new System.Drawing.Point(770, 775);
-            this.txtAuthor.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(124, 26);
             this.txtAuthor.TabIndex = 26;
@@ -420,12 +354,7 @@
             // txtPages
             // 
             this.txtPages.Enabled = false;
-<<<<<<< HEAD
             this.txtPages.Location = new System.Drawing.Point(682, 493);
-=======
-            this.txtPages.Location = new System.Drawing.Point(1212, 764);
-            this.txtPages.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(124, 26);
             this.txtPages.TabIndex = 28;
@@ -452,12 +381,7 @@
             "Cyber Security",
             "Database Management",
             "Network Architecture"});
-<<<<<<< HEAD
             this.comboCISArea.Location = new System.Drawing.Point(173, 602);
-=======
-            this.comboCISArea.Location = new System.Drawing.Point(308, 933);
-            this.comboCISArea.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.comboCISArea.Name = "comboCISArea";
             this.comboCISArea.Size = new System.Drawing.Size(129, 28);
             this.comboCISArea.TabIndex = 30;
@@ -494,12 +418,7 @@
             // txtLeadActor
             // 
             this.txtLeadActor.Enabled = false;
-<<<<<<< HEAD
             this.txtLeadActor.Location = new System.Drawing.Point(173, 717);
-=======
-            this.txtLeadActor.Location = new System.Drawing.Point(308, 1111);
-            this.txtLeadActor.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtLeadActor.Name = "txtLeadActor";
             this.txtLeadActor.Size = new System.Drawing.Size(232, 26);
             this.txtLeadActor.TabIndex = 34;
@@ -518,12 +437,7 @@
             // txtReleaseDate
             // 
             this.txtReleaseDate.Enabled = false;
-<<<<<<< HEAD
             this.txtReleaseDate.Location = new System.Drawing.Point(549, 720);
-=======
-            this.txtReleaseDate.Location = new System.Drawing.Point(976, 1116);
-            this.txtReleaseDate.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtReleaseDate.Name = "txtReleaseDate";
             this.txtReleaseDate.Size = new System.Drawing.Size(124, 26);
             this.txtReleaseDate.TabIndex = 36;
@@ -533,12 +447,7 @@
             // txtRunTime
             // 
             this.txtRunTime.Enabled = false;
-<<<<<<< HEAD
             this.txtRunTime.Location = new System.Drawing.Point(825, 717);
-=======
-            this.txtRunTime.Location = new System.Drawing.Point(1467, 1111);
-            this.txtRunTime.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtRunTime.Name = "txtRunTime";
             this.txtRunTime.Size = new System.Drawing.Size(124, 26);
             this.txtRunTime.TabIndex = 38;
@@ -566,12 +475,7 @@
             // txtCDLabel
             // 
             this.txtCDLabel.Enabled = false;
-<<<<<<< HEAD
             this.txtCDLabel.Location = new System.Drawing.Point(173, 819);
-=======
-            this.txtCDLabel.Location = new System.Drawing.Point(308, 1269);
-            this.txtCDLabel.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtCDLabel.Name = "txtCDLabel";
             this.txtCDLabel.Size = new System.Drawing.Size(124, 26);
             this.txtCDLabel.TabIndex = 41;
@@ -589,12 +493,7 @@
             // txtArtists
             // 
             this.txtArtists.Enabled = false;
-<<<<<<< HEAD
             this.txtArtists.Location = new System.Drawing.Point(441, 822);
-=======
-            this.txtArtists.Location = new System.Drawing.Point(784, 1274);
-            this.txtArtists.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtArtists.Name = "txtArtists";
             this.txtArtists.Size = new System.Drawing.Size(232, 26);
             this.txtArtists.TabIndex = 43;
@@ -622,12 +521,7 @@
             // txtConductor
             // 
             this.txtConductor.Enabled = false;
-<<<<<<< HEAD
             this.txtConductor.Location = new System.Drawing.Point(186, 941);
-=======
-            this.txtConductor.Location = new System.Drawing.Point(331, 1459);
-            this.txtConductor.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtConductor.Name = "txtConductor";
             this.txtConductor.Size = new System.Drawing.Size(232, 26);
             this.txtConductor.TabIndex = 46;
@@ -667,12 +561,7 @@
             // 
             this.btnEnterUPC.Enabled = false;
             this.btnEnterUPC.ForeColor = System.Drawing.Color.Green;
-<<<<<<< HEAD
             this.btnEnterUPC.Location = new System.Drawing.Point(91, 1120);
-=======
-            this.btnEnterUPC.Location = new System.Drawing.Point(162, 1736);
-            this.btnEnterUPC.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnEnterUPC.Name = "btnEnterUPC";
             this.btnEnterUPC.Size = new System.Drawing.Size(244, 34);
             this.btnEnterUPC.TabIndex = 51;
@@ -682,12 +571,7 @@
             // btnFind
             // 
             this.btnFind.Enabled = false;
-<<<<<<< HEAD
             this.btnFind.Location = new System.Drawing.Point(418, 1120);
-=======
-            this.btnFind.Location = new System.Drawing.Point(743, 1736);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(158, 37);
             this.btnFind.TabIndex = 52;
@@ -699,12 +583,7 @@
             // btnEdit
             // 
             this.btnEdit.Enabled = false;
-<<<<<<< HEAD
             this.btnEdit.Location = new System.Drawing.Point(614, 1117);
-=======
-            this.btnEdit.Location = new System.Drawing.Point(1092, 1731);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(158, 40);
             this.btnEdit.TabIndex = 53;
@@ -716,27 +595,18 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-<<<<<<< HEAD
             this.btnSave.Location = new System.Drawing.Point(804, 1117);
-=======
-            this.btnSave.Location = new System.Drawing.Point(1429, 1731);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(158, 40);
             this.btnSave.TabIndex = 54;
             this.btnSave.Text = "Save Updates\r\n";
+            this.toolTip1.SetToolTip(this.btnSave, "Click to Save Updates to the Product List\r\n");
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-<<<<<<< HEAD
             this.btnDelete.Location = new System.Drawing.Point(1001, 1117);
-=======
-            this.btnDelete.Location = new System.Drawing.Point(1780, 1731);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(158, 40);
             this.btnDelete.TabIndex = 55;
@@ -759,29 +629,19 @@
             // 
             // btnCreateCDChamber
             // 
-<<<<<<< HEAD
             this.btnCreateCDChamber.Location = new System.Drawing.Point(974, 222);
-=======
-            this.btnCreateCDChamber.Location = new System.Drawing.Point(1732, 344);
-            this.btnCreateCDChamber.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.btnCreateCDChamber.Name = "btnCreateCDChamber";
             this.btnCreateCDChamber.Size = new System.Drawing.Size(201, 45);
             this.btnCreateCDChamber.TabIndex = 58;
             this.btnCreateCDChamber.Text = "Create CD Chamber";
-            this.toolTip1.SetToolTip(this.btnCreateCDChamber, "Click to enter Make CDChamber mode to add a CDChamber to the List of Products.");
+            this.toolTip1.SetToolTip(this.btnCreateCDChamber, "Click to Save a CDChamber object to the List of Products");
             this.btnCreateCDChamber.UseVisualStyleBackColor = true;
             this.btnCreateCDChamber.Click += new System.EventHandler(this.btnCreateCDChamber_Click);
             // 
             // txtInstruments
             // 
             this.txtInstruments.Enabled = false;
-<<<<<<< HEAD
             this.txtInstruments.Location = new System.Drawing.Point(675, 937);
-=======
-            this.txtInstruments.Location = new System.Drawing.Point(1200, 1452);
-            this.txtInstruments.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.txtInstruments.Name = "txtInstruments";
             this.txtInstruments.Size = new System.Drawing.Size(232, 26);
             this.txtInstruments.TabIndex = 59;
@@ -791,9 +651,10 @@
             // 
             this.lblUserMessage.AutoSize = true;
             this.lblUserMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblUserMessage.Location = new System.Drawing.Point(1183, 1651);
+            this.lblUserMessage.Location = new System.Drawing.Point(665, 1065);
+            this.lblUserMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserMessage.Name = "lblUserMessage";
-            this.lblUserMessage.Size = new System.Drawing.Size(0, 32);
+            this.lblUserMessage.Size = new System.Drawing.Size(0, 20);
             this.lblUserMessage.TabIndex = 60;
             // 
             // frmBookCDDVD
@@ -801,12 +662,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1297, 951);
-=======
-            this.ClientSize = new System.Drawing.Size(2260, 1748);
+            this.ClientSize = new System.Drawing.Size(1271, 951);
             this.Controls.Add(this.lblUserMessage);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.Controls.Add(this.txtInstruments);
             this.Controls.Add(this.btnCreateCDChamber);
             this.Controls.Add(this.lblRunTime);
@@ -863,10 +720,6 @@
             this.Controls.Add(this.lblControls);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.lblTitle);
-<<<<<<< HEAD
-=======
-            this.Margin = new System.Windows.Forms.Padding(5);
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
             this.Name = "frmBookCDDVD";
             this.Text = "BookCDDVD";
             this.ResumeLayout(false);

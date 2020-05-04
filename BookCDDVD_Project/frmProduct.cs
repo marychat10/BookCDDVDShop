@@ -40,42 +40,7 @@ namespace BookCDDVD_Project
             InitializeComponent();
         }
 
-        // Tooltip messages
-        string ttCreateCDChamber = "Click to enter Make CDChamber mode to add a CDChamber to the List of Products.";
-        string ttCreateCDOrchestra = "Click to enter Make CDOrchestra mode to add a CDOrchestra to the List of Products.";
-        string ttCreateBook = "Click to enter Make Book mode to add a Book to the List of Products.";
-        string ttCreateBookCIS = "Click to enter Make BookCIS mode to add a BookCIS to the List of Products.";
-        string ttCreateDVD = "Click to enter Make DVD mode to add a DVD to the List of Products.";
-        string ttSaveCDChamber = "Click to Save a CDChamber object to the List of Products.";
-        string ttSaveCDOrchestra = "Click to Save a CDOrchestra object to the List of Products.";
-        string ttSaveBookCIS = "Click to Save a BookCIS object to the list of Products.";
-        string ttSaveBook = "Click to Save the Book object to the List of Products.";
-        string ttSaveDVD = "Click to Save the DVD to the List of Products.";
-        string ttClear = "Click to Clear Form.";
-        string ttFind = "Click to Find a Product in the List of Products.";
-        string ttDelete = "Click to Delete Product from the List of Products.";
-        string ttEdit = "Click to Edit a Product's data.";
-        string ttExit = "Click to exit application.";
-
-        // ?????????? Fix The Specs (in red) for Each Item ??????????
-
-        string ttProductUPC = "Enter a 5 digit integer - no leading zeros";
-        string ttProductPrice = "Enter dollars and cents >= 0.0. NO $. Exactly two decimal digits";
-        string ttProductTitle = "Enter a string of words (all letters) separated by blanks for any item in the shop";
-        string ttProductQuantity = "Enter any integer greater than or equal to 0";
-        string ttBookISBN = "Enter Book ISBN in format nnn-nnn)";
-        string ttBookAuthor = "Enter Book Author first and last names (all letters) separated by a blank";
-        string ttBookPages = "Enter Book page count as an integer greater than 0.";
-        string ttDVDLeadActor = "Enter DVD Lead Actor with first and last names (all letters) separated by a blank.";
-        string ttDVDReleaseDate = "Enter DVD Release Date in form mm/dd/yyyy between Jan 1 1980 and Dec 31 2019. Use date picker.";
-        string ttDVDRunTime = "Enter DVD run time in minutes. Must be a positive integer.";
-        string ttBookCISCISArea = "Enter valid CIS area of study using a drop-down menu.";
-        string ttCDClassicalLabel = "Enter any sequence of words (all letters) separated by blanks.";
-        string ttCDClassicalArtists = "Enter soloists last names separated by a blank";
-        string ttCDChamberInstrumentList = "Enter Instrument names separated by a blank";
-        string ttCDOrchestraConductor = "Enter Conductor last name with all letters and one blank or one hyphen";
-
-
+      
         // This sub is called when the form is loaded
         private void frmBookCDDVD_Load(System.Object sender, System.EventArgs e)
         {
@@ -84,36 +49,6 @@ namespace BookCDDVD_Project
             SFManager.readFromFile(ref thisProductList, FileName);
             FormController.clear(this);
 
-            //// get initial Tooltips
-            //toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
-            //toolTip1.SetToolTip(btnCreateBook, ttCreateBook);
-            //toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDOrchestra);
-            //toolTip1.SetToolTip(btnCreateCDOrc, ttCreateDVD);
-            //toolTip1.SetToolTip(btnCreateDVD, ttCreateCDChamber);
-
-            //toolTip1.SetToolTip(btnClearForm, ttClear);
-            //toolTip1.SetToolTip(btnDelete, ttDelete);
-            //toolTip1.SetToolTip(btnEdit, ttEdit);
-            //toolTip1.SetToolTip(btnFind, ttFind);
-            //toolTip1.SetToolTip(btnExit, ttExit);
-
-            //toolTip1.SetToolTip(txtUPC, ttProductUPC);
-            //toolTip1.SetToolTip(txtPrice, ttProductPrice);
-            //toolTip1.SetToolTip(txtQuantity, ttProductQuantity);
-            //toolTip1.SetToolTip(txtTitle, ttProductTitle);
-            //toolTip1.SetToolTip(txtConductor, ttCDOrchestraConductor);
-            //toolTip1.SetToolTip(txtISBNLeft, ttBookISBN);
-            //toolTip1.SetToolTip(txtAuthor, ttBookAuthor);
-            //toolTip1.SetToolTip(txtPages, ttBookPages);
-            //toolTip1.SetToolTip(txtLeadActor, ttDVDLeadActor);
-            //toolTip1.SetToolTip(txtReleaseDate, ttDVDReleaseDate);
-            //toolTip1.SetToolTip(txtRunTime, ttDVDRunTime);
-            //toolTip1.SetToolTip(txtCDLabel, ttCDClassicalLabel);
-            //toolTip1.SetToolTip(txtArtists, ttCDClassicalArtists);
-            //toolTip1.SetToolTip(txtConductor, ttCDOrchestraConductor);
-            //toolTip1.SetToolTip(txtInstruments, ttCDChamberInstrumentList);
-            //toolTip1.SetToolTip(comboCISArea, ttBookCISCISArea);
-            //toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
         } // end frmEBookCDDVDShop_Load
 
         // Display CD Chamber, Book, CIS Book, CD Orchestra, or DVD Form Depending on 
@@ -224,7 +159,7 @@ namespace BookCDDVD_Project
             txtPages.Enabled = true;
 
 
-            toolTip1.SetToolTip(btnCreateBook, ttSaveBook);
+           
             txtUPC.Focus();
         } // end DisplayCDChamberForm
 
@@ -246,7 +181,7 @@ namespace BookCDDVD_Project
             comboCISArea.Enabled = true;
 
 
-            toolTip1.SetToolTip(btnCreateCISBook, ttSaveBookCIS);
+           
             txtUPC.Focus();
         } // end DisplayCISBook Form
 
@@ -266,8 +201,7 @@ namespace BookCDDVD_Project
             txtReleaseDate.Enabled = true;
             txtRunTime.Enabled = true;
 
-
-            toolTip1.SetToolTip(btnCreateDVD, ttSaveDVD);
+            
             txtUPC.Focus();
         } // end DVD Form 
 
@@ -287,7 +221,6 @@ namespace BookCDDVD_Project
             txtConductor.Enabled = true;
 
 
-            toolTip1.SetToolTip(btnCreateCDOrc, ttSaveCDOrchestra);
             txtUPC.Focus();
         } // end DVD Form 
 
@@ -305,8 +238,6 @@ namespace BookCDDVD_Project
             txtCDLabel.Enabled = true;
             txtInstruments.Enabled = true;
 
-
-            toolTip1.SetToolTip(btnCreateCDChamber, ttSaveCDChamber);
             txtUPC.Focus();
         } // end DVD Form 
 
@@ -367,7 +298,7 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-                toolTip1.SetToolTip(btnCreateBook, ttCreateBook);
+              
             }  // end outer else
         }  // end Create Book Object
 
@@ -440,7 +371,7 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-                toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
+                
             }
         }// end outer else
 
@@ -498,7 +429,7 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-                toolTip1.SetToolTip(btnCreateDVD, ttCreateDVD);
+              
             }  // end outer else
         }  // end Create DVD Object
 
@@ -774,7 +705,7 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-                toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDChamber);
+               
             }
         }// end outer else
 
@@ -843,16 +774,14 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-                toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDChamber);
+            
             }
         }
 
-<<<<<<< HEAD
-       
-=======
+
         private bool lookForDuplicate(string UPC)
         {
-            if (thisProductList.UPCMatch(UPC))
+            if (thisProductList.Duplicate(UPC) ==true )
             {
                 return true;
             }
@@ -886,6 +815,6 @@ namespace BookCDDVD_Project
             }  // end else
         } // end getItem
 
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
+
     }
 }

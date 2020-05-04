@@ -60,6 +60,25 @@ namespace BookCDDVD_Project.Classes
 
         }
 
+        public Boolean Duplicate(string UPC)
+        {
+            for (int i = 0; i > hiddenProductList.Count();)
+            {
+                if (UPC == hiddenProductList[i].ProductUPC.ToString())
+                {
+                    return true;
+
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return false;
+
+        }
+
+
         //If matching UPC was found return true
         public int UPCMatch(string UPC)
         {
