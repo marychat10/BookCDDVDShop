@@ -17,7 +17,7 @@ namespace BookCDDVDShop_Project.Classes
         // Connection string for ProductDB (type: Microsoft Access) in the Resources folder
         string strConnection = "provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=../Debug/ProductDB.accdb";
         //string strConnection = "provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source= " +
-        //    "L:\\ALL MY DATA\\Frank's Syllabus\\AAA CIS 3309 CSharp F19-S20\\CIS 3309 All Projects 2019-20\\BookCDDVD Project (adapted Jupin) DB Version\\ProductDB.accdb";
+        // "L:\\ALL MY DATA\\Frank's Syllabus\\AAA CIS 3309 CSharp F19-S20\\CIS 3309 All Projects 2019-20\\BookCDDVD Project (adapted Jupin) DB Version\\ProductDB.accdb";
 
         // *********** INSERTION METHODS **********
         // 1 Inserts a new record for Product in the Product table with parameters UPC, Price, Title, Quantity, and
@@ -58,7 +58,7 @@ namespace BookCDDVDShop_Project.Classes
             }
 
         }  // end InsertProduct
-
+    
 
         // 2 Inserts a new record into Book table with parameters UPC and ISBN, Author, Pages
         public bool InsertBook(int UPC, int ISBN, string author, int pages)
