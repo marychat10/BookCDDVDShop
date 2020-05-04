@@ -1,4 +1,4 @@
-﻿  using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +37,7 @@ namespace BookCDDVD_Project.Classes
         public void setAnItem(int i, Product value)
         {
             hiddenProductList[i] = value;
+
         } // end set
 
 
@@ -45,9 +46,6 @@ namespace BookCDDVD_Project.Classes
             return (hiddenProductList.Count);
 
         }
-
-
-
 
     }
 }

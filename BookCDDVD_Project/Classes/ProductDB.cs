@@ -8,7 +8,6 @@ using System.IO;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
-
 namespace BookCDDVDShop_Project.Classes
 {
     class ProductDB
