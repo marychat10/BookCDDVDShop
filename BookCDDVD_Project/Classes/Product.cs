@@ -111,6 +111,7 @@ namespace BookCDDVD_Project.Classes
                 hiddenPrice = Convert.ToDecimal(f.txtPrice.Text);
                 hiddenTitle = f.txtTitle.Text;
                 hiddenQuantity = Convert.ToInt32(f.txtQuantity.Text);
+               
             }
            
         }  // end Save

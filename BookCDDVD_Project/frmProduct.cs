@@ -80,8 +80,8 @@ namespace BookCDDVD_Project
         private void frmBookCDDVD_Load(System.Object sender, System.EventArgs e)
         {
             //// Read serialized binary data file
-            //SFManager.readFromFile(ref thisProductList, FileName);
-            // FormController.clear(this);
+            SFManager.readFromFile(ref thisProductList, FileName);
+            FormController.clear(this);
 
             // get initial Tooltips
             toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
@@ -115,6 +115,41 @@ namespace BookCDDVD_Project
             toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
         } // end frmEBookCDDVDShop_Load
 
+        // Display CD Chamber, Book, CIS Book, CD Orchestra, or DVD Form Depending on 
+        //Type of Object Found
+        private void displayRelevantFormPart(Product p)
+        {
+            if (p.GetType() == typeof(CDChamber))
+            {
+                FormController.activateCDChamber(this);
+                FormController.deactivateAllButCDChamber(this);
+            }
+            else if (p.GetType() == typeof(CDOrchestra))
+            {
+                FormController.activateCDOrchestra(this);
+                FormController.deactivateAllButCDOrchestra(this);
+            }
+            else if (p.GetType() == typeof(Book))
+            {
+                FormController.activateBook(this);
+                FormController.deactivateAllButBook(this);
+                // FormController.deactivateAddButtons(this);
+            }
+            else if (p.GetType() == typeof(BookCIS))
+            {
+                FormController.activateBookCIS(this);
+                FormController.deactivateAllButBookCIS(this);
+
+            }  // end thisProduct if
+            else if (p.GetType() == typeof(DVD))
+            {
+                FormController.activateDVD(this);
+                FormController.deactivateAllButDVD(this);
+
+            }  // end thisProduct if
+        } // end displayRelevantFormPart
+
+
         private void btnClearForm_Click(object sender, EventArgs e)
         {
             FormController.clear(this);
@@ -127,11 +162,11 @@ namespace BookCDDVD_Project
             MessageBox.Show("Number of records processed = " +
                  recordsProcessedCount.ToString(),
                  "Exit Message", MessageBoxButtons.OK);
-            MessageBox.Show("The list entries are ...", "Display List Entries");
-            // thisProductList.displayProductList();
+           // MessageBox.Show("The list entries are ...", "Display List Entries");
+            thisProductList.displayProductList();
 
             // Save serialized binary file
-            //  SFManager.writeToFile(thisProductList, FileName);
+             SFManager.writeToFile(thisProductList, FileName);
 
             this.Close();
 
@@ -568,11 +603,22 @@ namespace BookCDDVD_Project
             }
         }
 
+        //returns true if UPC was found
         private Boolean findAnItem(string Edit)
         {
-
-            return true;
+            string UPC = Convert.ToString(txtUPC.Text);
+           if(thisProductList.UPCMatch(UPC) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+
+
 
 
         private void btnEdit_Click(object sender, EventArgs e)
