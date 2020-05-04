@@ -847,12 +847,14 @@ namespace BookCDDVD_Project
             }
         }
 
-<<<<<<< HEAD
-       
-=======
+        private void btnEnterUPC_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private bool lookForDuplicate(string UPC)
         {
-            if (thisProductList.UPCMatch(UPC))
+            if (thisProductList.findUPC(UPC))
             {
                 return true;
             }
@@ -886,6 +888,4 @@ namespace BookCDDVD_Project
             }  // end else
         } // end getItem
 
->>>>>>> 620a8cfb446eedb2c88bea5db38abb546e540a5a
-    }
 }
