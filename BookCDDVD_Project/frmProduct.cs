@@ -23,7 +23,7 @@ namespace BookCDDVD_Project
         // This is a class object that manages a List of Products		
         ProductList thisProductList = new ProductList();
 
-        // This index keeps track of the current Owl
+        // This index keeps track of the current product
         int currentIndex = -1;
 
         int recordsProcessedCount = 0;
@@ -79,40 +79,41 @@ namespace BookCDDVD_Project
         // This sub is called when the form is loaded
         private void frmBookCDDVD_Load(System.Object sender, System.EventArgs e)
         {
+          
             //// Read serialized binary data file
             SFManager.readFromFile(ref thisProductList, FileName);
             FormController.clear(this);
 
-            // get initial Tooltips
-            toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
-            toolTip1.SetToolTip(btnCreateBook, ttCreateBook);
-            toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDOrchestra);
-            toolTip1.SetToolTip(btnCreateCDOrc, ttCreateDVD);
-            toolTip1.SetToolTip(btnCreateDVD, ttCreateCDChamber);
+            //// get initial Tooltips
+            //toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
+            //toolTip1.SetToolTip(btnCreateBook, ttCreateBook);
+            //toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDOrchestra);
+            //toolTip1.SetToolTip(btnCreateCDOrc, ttCreateDVD);
+            //toolTip1.SetToolTip(btnCreateDVD, ttCreateCDChamber);
 
-            toolTip1.SetToolTip(btnClearForm, ttClear);
-            toolTip1.SetToolTip(btnDelete, ttDelete);
-            toolTip1.SetToolTip(btnEdit, ttEdit);
-            toolTip1.SetToolTip(btnFind, ttFind);
-            toolTip1.SetToolTip(btnExit, ttExit);
+            //toolTip1.SetToolTip(btnClearForm, ttClear);
+            //toolTip1.SetToolTip(btnDelete, ttDelete);
+            //toolTip1.SetToolTip(btnEdit, ttEdit);
+            //toolTip1.SetToolTip(btnFind, ttFind);
+            //toolTip1.SetToolTip(btnExit, ttExit);
 
-            toolTip1.SetToolTip(txtUPC, ttProductUPC);
-            toolTip1.SetToolTip(txtPrice, ttProductPrice);
-            toolTip1.SetToolTip(txtQuantity, ttProductQuantity);
-            toolTip1.SetToolTip(txtTitle, ttProductTitle);
-            toolTip1.SetToolTip(txtConductor, ttCDOrchestraConductor);
-            toolTip1.SetToolTip(txtISBNLeft, ttBookISBN);
-            toolTip1.SetToolTip(txtAuthor, ttBookAuthor);
-            toolTip1.SetToolTip(txtPages, ttBookPages);
-            toolTip1.SetToolTip(txtLeadActor, ttDVDLeadActor);
-            toolTip1.SetToolTip(txtReleaseDate, ttDVDReleaseDate);
-            toolTip1.SetToolTip(txtRunTime, ttDVDRunTime);
-            toolTip1.SetToolTip(txtCDLabel, ttCDClassicalLabel);
-            toolTip1.SetToolTip(txtArtists, ttCDClassicalArtists);
-            toolTip1.SetToolTip(txtConductor, ttCDOrchestraConductor);
-            toolTip1.SetToolTip(txtInstruments, ttCDChamberInstrumentList);
-            toolTip1.SetToolTip(comboCISArea, ttBookCISCISArea);
-            toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
+            //toolTip1.SetToolTip(txtUPC, ttProductUPC);
+            //toolTip1.SetToolTip(txtPrice, ttProductPrice);
+            //toolTip1.SetToolTip(txtQuantity, ttProductQuantity);
+            //toolTip1.SetToolTip(txtTitle, ttProductTitle);
+            //toolTip1.SetToolTip(txtConductor, ttCDOrchestraConductor);
+            //toolTip1.SetToolTip(txtISBNLeft, ttBookISBN);
+            //toolTip1.SetToolTip(txtAuthor, ttBookAuthor);
+            //toolTip1.SetToolTip(txtPages, ttBookPages);
+            //toolTip1.SetToolTip(txtLeadActor, ttDVDLeadActor);
+            //toolTip1.SetToolTip(txtReleaseDate, ttDVDReleaseDate);
+            //toolTip1.SetToolTip(txtRunTime, ttDVDRunTime);
+            //toolTip1.SetToolTip(txtCDLabel, ttCDClassicalLabel);
+            //toolTip1.SetToolTip(txtArtists, ttCDClassicalArtists);
+            //toolTip1.SetToolTip(txtConductor, ttCDOrchestraConductor);
+            //toolTip1.SetToolTip(txtInstruments, ttCDChamberInstrumentList);
+            //toolTip1.SetToolTip(comboCISArea, ttBookCISCISArea);
+            //toolTip1.SetToolTip(btnCreateCISBook, ttCreateBookCIS);
         } // end frmEBookCDDVDShop_Load
 
         // Display CD Chamber, Book, CIS Book, CD Orchestra, or DVD Form Depending on 
@@ -607,13 +608,15 @@ namespace BookCDDVD_Project
         private Boolean findAnItem(string Edit)
         {
             string UPC = Convert.ToString(txtUPC.Text);
-           if(thisProductList.UPCMatch(UPC) == true)
+           if(thisProductList.UPCMatch(UPC) == -1)
             {
-                return true;
+
+                return false;
             }
             else
             {
-                return false;
+                currentIndex = thisProductList.UPCMatch(UPC);
+                return true;
             }
         }
 
@@ -823,5 +826,7 @@ namespace BookCDDVD_Project
                 toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDChamber);
             }
         }
+
+       
     }
 }

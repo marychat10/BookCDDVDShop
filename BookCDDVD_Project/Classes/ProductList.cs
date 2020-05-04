@@ -59,14 +59,14 @@ namespace BookCDDVD_Project.Classes
             
         }
 
-        //IF mathcing UPC was found returns true
-        public Boolean UPCMatch(string UPC)
+        //If matching UPC was found return true
+        public int UPCMatch(string UPC)
         {
             for(int i = 0; i>hiddenProductList.Count();)
             {
                 if(UPC == hiddenProductList[i].ProductUPC.ToString())
                 {
-                    return true;
+                    return i;
 
                 }
                 else
@@ -74,7 +74,7 @@ namespace BookCDDVD_Project.Classes
                     i++;
                 }
             }
-            return false;
+            return -1;
         }
 
         
