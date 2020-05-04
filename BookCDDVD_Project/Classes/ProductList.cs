@@ -20,7 +20,7 @@ namespace BookCDDVD_Project.Classes
         {
 
         }
-        //Add an Product to List
+        //Add a Product to List
 
         public void Add(Product p)
         {

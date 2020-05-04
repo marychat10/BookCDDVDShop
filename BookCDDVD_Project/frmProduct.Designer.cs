@@ -122,7 +122,7 @@
             // btnCreateBook
             // 
             this.btnCreateBook.Location = new System.Drawing.Point(181, 344);
-            this.btnCreateBook.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCreateBook.Margin = new System.Windows.Forms.Padding(5);
             this.btnCreateBook.Name = "btnCreateBook";
             this.btnCreateBook.Size = new System.Drawing.Size(281, 70);
             this.btnCreateBook.TabIndex = 3;
@@ -133,7 +133,7 @@
             // btnCreateCISBook
             // 
             this.btnCreateCISBook.Location = new System.Drawing.Point(571, 344);
-            this.btnCreateCISBook.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCreateCISBook.Margin = new System.Windows.Forms.Padding(5);
             this.btnCreateCISBook.Name = "btnCreateCISBook";
             this.btnCreateCISBook.Size = new System.Drawing.Size(281, 70);
             this.btnCreateCISBook.TabIndex = 4;
@@ -144,7 +144,7 @@
             // btnCreateDVD
             // 
             this.btnCreateDVD.Location = new System.Drawing.Point(962, 344);
-            this.btnCreateDVD.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCreateDVD.Margin = new System.Windows.Forms.Padding(5);
             this.btnCreateDVD.Name = "btnCreateDVD";
             this.btnCreateDVD.Size = new System.Drawing.Size(281, 70);
             this.btnCreateDVD.TabIndex = 5;
@@ -155,7 +155,7 @@
             // btnCreateCDOrc
             // 
             this.btnCreateCDOrc.Location = new System.Drawing.Point(1330, 344);
-            this.btnCreateCDOrc.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCreateCDOrc.Margin = new System.Windows.Forms.Padding(5);
             this.btnCreateCDOrc.Name = "btnCreateCDOrc";
             this.btnCreateCDOrc.Size = new System.Drawing.Size(357, 70);
             this.btnCreateCDOrc.TabIndex = 6;
@@ -199,7 +199,7 @@
             // 
             this.txtUPC.Enabled = false;
             this.txtUPC.Location = new System.Drawing.Point(308, 606);
-            this.txtUPC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtUPC.Margin = new System.Windows.Forms.Padding(5);
             this.txtUPC.Name = "txtUPC";
             this.txtUPC.Size = new System.Drawing.Size(217, 38);
             this.txtUPC.TabIndex = 11;
@@ -218,7 +218,7 @@
             // 
             this.txtPrice.Enabled = false;
             this.txtPrice.Location = new System.Drawing.Point(770, 611);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(5);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(217, 38);
             this.txtPrice.TabIndex = 13;
@@ -237,7 +237,7 @@
             // 
             this.txtTitle.Enabled = false;
             this.txtTitle.Location = new System.Drawing.Point(1212, 611);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(5);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(217, 38);
             this.txtTitle.TabIndex = 15;
@@ -256,7 +256,7 @@
             // 
             this.txtQuantity.Enabled = false;
             this.txtQuantity.Location = new System.Drawing.Point(1678, 606);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(5);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(217, 38);
             this.txtQuantity.TabIndex = 17;
@@ -265,7 +265,7 @@
             // 
             this.btnClearForm.Enabled = false;
             this.btnClearForm.Location = new System.Drawing.Point(2039, 535);
-            this.btnClearForm.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnClearForm.Margin = new System.Windows.Forms.Padding(5);
             this.btnClearForm.Name = "btnClearForm";
             this.btnClearForm.Size = new System.Drawing.Size(171, 119);
             this.btnClearForm.TabIndex = 18;
@@ -276,7 +276,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(2039, 713);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(5);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(171, 119);
             this.btnExit.TabIndex = 19;
@@ -309,7 +309,7 @@
             // 
             this.txtISBNLeft.Enabled = false;
             this.txtISBNLeft.Location = new System.Drawing.Point(308, 773);
-            this.txtISBNLeft.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtISBNLeft.Margin = new System.Windows.Forms.Padding(5);
             this.txtISBNLeft.Name = "txtISBNLeft";
             this.txtISBNLeft.Size = new System.Drawing.Size(98, 38);
             this.txtISBNLeft.TabIndex = 22;
@@ -329,7 +329,7 @@
             // 
             this.txtISBNRight.Enabled = false;
             this.txtISBNRight.Location = new System.Drawing.Point(473, 775);
-            this.txtISBNRight.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtISBNRight.Margin = new System.Windows.Forms.Padding(5);
             this.txtISBNRight.Name = "txtISBNRight";
             this.txtISBNRight.Size = new System.Drawing.Size(98, 38);
             this.txtISBNRight.TabIndex = 24;
@@ -348,7 +348,7 @@
             // 
             this.txtAuthor.Enabled = false;
             this.txtAuthor.Location = new System.Drawing.Point(770, 775);
-            this.txtAuthor.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(5);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(217, 38);
             this.txtAuthor.TabIndex = 26;
@@ -367,7 +367,7 @@
             // 
             this.txtPages.Enabled = false;
             this.txtPages.Location = new System.Drawing.Point(1212, 764);
-            this.txtPages.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPages.Margin = new System.Windows.Forms.Padding(5);
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(217, 38);
             this.txtPages.TabIndex = 28;
@@ -395,7 +395,7 @@
             "Database Management",
             "Network Architecture"});
             this.comboCISArea.Location = new System.Drawing.Point(308, 933);
-            this.comboCISArea.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboCISArea.Margin = new System.Windows.Forms.Padding(5);
             this.comboCISArea.Name = "comboCISArea";
             this.comboCISArea.Size = new System.Drawing.Size(226, 39);
             this.comboCISArea.TabIndex = 30;
@@ -435,7 +435,7 @@
             // 
             this.txtLeadActor.Enabled = false;
             this.txtLeadActor.Location = new System.Drawing.Point(308, 1111);
-            this.txtLeadActor.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtLeadActor.Margin = new System.Windows.Forms.Padding(5);
             this.txtLeadActor.Name = "txtLeadActor";
             this.txtLeadActor.Size = new System.Drawing.Size(409, 38);
             this.txtLeadActor.TabIndex = 34;
@@ -454,7 +454,7 @@
             // 
             this.txtReleaseDate.Enabled = false;
             this.txtReleaseDate.Location = new System.Drawing.Point(976, 1116);
-            this.txtReleaseDate.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtReleaseDate.Margin = new System.Windows.Forms.Padding(5);
             this.txtReleaseDate.Name = "txtReleaseDate";
             this.txtReleaseDate.Size = new System.Drawing.Size(217, 38);
             this.txtReleaseDate.TabIndex = 36;
@@ -463,7 +463,7 @@
             // 
             this.txtRunTime.Enabled = false;
             this.txtRunTime.Location = new System.Drawing.Point(1467, 1111);
-            this.txtRunTime.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtRunTime.Margin = new System.Windows.Forms.Padding(5);
             this.txtRunTime.Name = "txtRunTime";
             this.txtRunTime.Size = new System.Drawing.Size(217, 38);
             this.txtRunTime.TabIndex = 38;
@@ -493,7 +493,7 @@
             // 
             this.txtCDLabel.Enabled = false;
             this.txtCDLabel.Location = new System.Drawing.Point(308, 1269);
-            this.txtCDLabel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCDLabel.Margin = new System.Windows.Forms.Padding(5);
             this.txtCDLabel.Name = "txtCDLabel";
             this.txtCDLabel.Size = new System.Drawing.Size(217, 38);
             this.txtCDLabel.TabIndex = 41;
@@ -512,7 +512,7 @@
             // 
             this.txtArtists.Enabled = false;
             this.txtArtists.Location = new System.Drawing.Point(784, 1274);
-            this.txtArtists.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtArtists.Margin = new System.Windows.Forms.Padding(5);
             this.txtArtists.Name = "txtArtists";
             this.txtArtists.Size = new System.Drawing.Size(409, 38);
             this.txtArtists.TabIndex = 43;
@@ -542,7 +542,7 @@
             // 
             this.txtConductor.Enabled = false;
             this.txtConductor.Location = new System.Drawing.Point(331, 1459);
-            this.txtConductor.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtConductor.Margin = new System.Windows.Forms.Padding(5);
             this.txtConductor.Name = "txtConductor";
             this.txtConductor.Size = new System.Drawing.Size(409, 38);
             this.txtConductor.TabIndex = 46;
@@ -585,7 +585,7 @@
             this.btnEnterUPC.Enabled = false;
             this.btnEnterUPC.ForeColor = System.Drawing.Color.Green;
             this.btnEnterUPC.Location = new System.Drawing.Point(162, 1736);
-            this.btnEnterUPC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEnterUPC.Margin = new System.Windows.Forms.Padding(5);
             this.btnEnterUPC.Name = "btnEnterUPC";
             this.btnEnterUPC.Size = new System.Drawing.Size(434, 53);
             this.btnEnterUPC.TabIndex = 51;
@@ -596,7 +596,7 @@
             // 
             this.btnFind.Enabled = false;
             this.btnFind.Location = new System.Drawing.Point(743, 1736);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(5);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(281, 57);
             this.btnFind.TabIndex = 52;
@@ -608,7 +608,7 @@
             // 
             this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(1092, 1731);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(281, 62);
             this.btnEdit.TabIndex = 53;
@@ -620,7 +620,7 @@
             // 
             this.btnSave.Enabled = false;
             this.btnSave.Location = new System.Drawing.Point(1429, 1731);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(281, 62);
             this.btnSave.TabIndex = 54;
@@ -631,7 +631,7 @@
             // 
             this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(1780, 1731);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(281, 62);
             this.btnDelete.TabIndex = 55;
@@ -651,7 +651,7 @@
             // btnCreateCDChamber
             // 
             this.btnCreateCDChamber.Location = new System.Drawing.Point(1732, 344);
-            this.btnCreateCDChamber.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCreateCDChamber.Margin = new System.Windows.Forms.Padding(5);
             this.btnCreateCDChamber.Name = "btnCreateCDChamber";
             this.btnCreateCDChamber.Size = new System.Drawing.Size(357, 70);
             this.btnCreateCDChamber.TabIndex = 58;
@@ -663,7 +663,7 @@
             // 
             this.txtInstruments.Enabled = false;
             this.txtInstruments.Location = new System.Drawing.Point(1200, 1452);
-            this.txtInstruments.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtInstruments.Margin = new System.Windows.Forms.Padding(5);
             this.txtInstruments.Name = "txtInstruments";
             this.txtInstruments.Size = new System.Drawing.Size(409, 38);
             this.txtInstruments.TabIndex = 59;
@@ -673,7 +673,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(2260, 1604);
+            this.ClientSize = new System.Drawing.Size(2260, 1748);
             this.Controls.Add(this.txtInstruments);
             this.Controls.Add(this.btnCreateCDChamber);
             this.Controls.Add(this.lblRunTime);
@@ -730,7 +730,7 @@
             this.Controls.Add(this.lblControls);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmBookCDDVD";
             this.Text = "BookCDDVD";
             this.ResumeLayout(false);

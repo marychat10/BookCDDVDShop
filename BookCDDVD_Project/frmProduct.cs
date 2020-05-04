@@ -777,5 +777,38 @@ namespace BookCDDVD_Project
                 toolTip1.SetToolTip(btnCreateCDChamber, ttCreateCDChamber);
             }
         }
+
+        private void lookForDuplicates(int UPC)
+        {
+
+        }
+
+        private void getItem(int i)
+        {
+            if (thisProductList.Count() == 0)
+            {
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
+                // btnToString.Enabled = false;
+                lblUserMessage.Text = "Please select an operation";
+            }
+            else if (i < 0 || i >= thisProductList.Count())
+            {
+                MessageBox.Show("getItem error: index out of range");
+                return;
+            }
+            else
+            {
+                currentIndex = i;
+                thisProductList.getAnItem(i).Display(this);
+                lblUserMessage.Text = "Object Type: " +
+                   thisProductList.getAnItem(i).GetType().ToString() +
+                   " List Index: " + i.ToString();
+                btnFind.Enabled = true;
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
+            }  // end else
+        } // end getItem
+
     }
 }
