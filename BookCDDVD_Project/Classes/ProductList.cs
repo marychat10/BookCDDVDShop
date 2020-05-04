@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 // For serialization
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 
 namespace BookCDDVD_Project.Classes
 {
@@ -46,7 +47,17 @@ namespace BookCDDVD_Project.Classes
 
         }
 
+        public void displayProductList()
+        {
+            foreach( Product p in hiddenProductList)
+            {
+                MessageBox.Show("Products Added:" + "\r\n" + "Title:" +  p.ProductTitle.ToString() + "\r\n" + "UPC:" + p.ProductUPC.ToString() + "\r\n" + "Quantity:" + p.ProductQuantity.ToString() + "\r\n"
+                    + "Price:" + p.ProductPrice.ToString());
 
+            }
+            
+        }
+        
 
 
     }

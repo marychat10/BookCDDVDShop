@@ -16,8 +16,8 @@ namespace BookCDDVD_Project.Classes
         public DVD()
         {
             hiddenLeadActor = "";
-            
-            hiddenReleaseDate = Convert.ToDateTime(01 / 01 / 0001) ;
+
+            hiddenReleaseDate = new DateTime(1998, 04, 30); ;
             hiddenRunTime = 0;
 
         } // end DVD Parameterless Constructor
