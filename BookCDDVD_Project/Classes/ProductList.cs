@@ -48,21 +48,38 @@ namespace BookCDDVD_Project.Classes
 
         }
 
-<<<<<<< HEAD
         public void displayProductList()
         {
-            foreach( Product p in hiddenProductList)
+            foreach(Product p in hiddenProductList)
             {
-                MessageBox.Show("Products Added:" + "\r\n" + "Title:" +  p.ProductTitle.ToString() + "\r\n" + "UPC:" + p.ProductUPC.ToString() + "\r\n" + "Quantity:" + p.ProductQuantity.ToString() + "\r\n"
+                MessageBox.Show("Product Information Added:" + "\r\n" + "Title:" +  p.ProductTitle.ToString() + "\r\n" + "UPC:" + p.ProductUPC.ToString() + "\r\n" + "Quantity:" + p.ProductQuantity.ToString() + "\r\n"
                     + "Price:" + p.ProductPrice.ToString());
 
             }
             
         }
+
+        //IF mathcing UPC was found returns true
+        public Boolean UPCMatch(string UPC)
+        {
+            for(int i = 0; i>hiddenProductList.Count();)
+            {
+                if(UPC == hiddenProductList[i].ProductUPC.ToString())
+                {
+                    return true;
+
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return false;
+        }
+
         
 
 
-=======
->>>>>>> 7cdf7141cab0f5b3f8ec0b6983aadb6cd6d24516
+
     }
 }

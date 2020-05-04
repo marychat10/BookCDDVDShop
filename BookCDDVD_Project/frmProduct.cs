@@ -607,20 +607,18 @@ namespace BookCDDVD_Project
             }
         }
 
+        //returns true if UPC was found
         private Boolean findAnItem(string Edit)
         {
-            int UPC = Convert.ToInt32(txtUPC.Text);
-            for (int i = 0; i > thisProductList.Count(); i++)
+            string UPC = Convert.ToString(txtUPC.Text);
+           if(thisProductList.UPCMatch(UPC) == true)
             {
-              //  if (UPC == )
-                {
-
-                }
-
-
+                return true;
             }
-
-            return true;
+            else
+            {
+                return false;
+            }
         }
 
 
