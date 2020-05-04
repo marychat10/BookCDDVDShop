@@ -97,18 +97,37 @@ namespace BookCDDVD_Project.Classes
         //validate product price
         public static bool ValidateProductPrice(string price)
         {
-            if (price == "")
-            {
-                MessageBox.Show("Product Price was blank !");
-                return false;
+            try {
+                if (price == "")
+                {
+                    MessageBox.Show("Product Price was blank !");
+                    return false;
 
+                }
+
+                price = price.Trim();
+                if (price.Contains('$'))
+                {
+                    price = price.Substring(1);
+                }
+
+                Convert.ToDecimal(price);
+
+                return true;
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(price, @"^((\$\d+)(\.\d{2}))$"))
+
+            catch
             {
-                MessageBox.Show("Product Price must be exactly 2 decimal places");
+                MessageBox.Show("Price must be a numerical value.");
                 return false;
             }
-            return true;
+           
+
+            //if (!System.Text.RegularExpressions.Regex.IsMatch(price, @"^((\$\d+)(\.\d{2}))$"))
+            //{
+            //    MessageBox.Show("Product Price must be exactly 2 decimal places");
+            //    return false;
+            //}
         }
 
         //validate book entry
