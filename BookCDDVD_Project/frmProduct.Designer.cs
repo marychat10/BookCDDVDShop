@@ -672,6 +672,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(2260, 1604);
             this.Controls.Add(this.txtInstruments);
             this.Controls.Add(this.btnCreateCDChamber);
