@@ -86,6 +86,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnCreateCDChamber = new System.Windows.Forms.Button();
             this.txtInstruments = new System.Windows.Forms.TextBox();
+            this.lblUserMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -668,12 +669,22 @@
             this.txtInstruments.Size = new System.Drawing.Size(409, 38);
             this.txtInstruments.TabIndex = 59;
             // 
+            // lblUserMessage
+            // 
+            this.lblUserMessage.AutoSize = true;
+            this.lblUserMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblUserMessage.Location = new System.Drawing.Point(1183, 1651);
+            this.lblUserMessage.Name = "lblUserMessage";
+            this.lblUserMessage.Size = new System.Drawing.Size(0, 32);
+            this.lblUserMessage.TabIndex = 60;
+            // 
             // frmBookCDDVD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(2260, 1748);
+            this.Controls.Add(this.lblUserMessage);
             this.Controls.Add(this.txtInstruments);
             this.Controls.Add(this.btnCreateCDChamber);
             this.Controls.Add(this.lblRunTime);
@@ -797,5 +808,6 @@
         public System.Windows.Forms.Button btnCreateCDOrc;
         public System.Windows.Forms.Button btnCreateCDChamber;
         public System.Windows.Forms.TextBox txtInstruments;
+        private System.Windows.Forms.Label lblUserMessage;
     }
 }
