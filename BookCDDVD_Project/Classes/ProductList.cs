@@ -83,16 +83,13 @@ namespace BookCDDVD_Project.Classes
         //If matching UPC was found return true
         public int UPCMatch(string UPC)
         {
-            for(int i = 0; i>hiddenProductList.Count();)
+            for(int i = 0; i < hiddenProductList.Count(); i++)
             {
-                if(UPC == hiddenProductList[i].ProductUPC.ToString())
+                string productUPC = hiddenProductList[i].ProductUPC.ToString();
+                if (UPC == productUPC)
                 {
                     return i;
 
-                }
-                else
-                {
-                    i++;
                 }
             }
             return -1;
