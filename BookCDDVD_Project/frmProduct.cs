@@ -780,6 +780,59 @@ namespace BookCDDVD_Project
         } // end btnEdit_Click
 
 
+        private void btnCreateCDOrc_Click(object sender, EventArgs e)
+        {
+            txtUPC.Focus();
+            btnEnterUPC.Enabled = false;
+            if (btnCreateCDOrc.Text == "Create CD Orchestra")
+            {
+                // Set up form for Undergrad processing
+                DisplayCDOrchestraForm();
+                txtUPC.Focus();
+                btnCreateCISBook.Enabled = false;
+                btnCreateBook.Enabled = false;
+                btnCreateCDChamber.Enabled = false;
+                btnCreateDVD.Enabled = false;
+            }
+            else
+            {
+                if (ValidateProduct() == false) return;
+                // Look for duplicate
+                if (lookForDuplicate(txtUPC.Text))
+                {
+                    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
+                        MessageBoxButtons.OK);
+                    return;
+                }
+                // Save an  if data is OK
+
+
+                if (Validation.ValidateCDOrc(txtCDLabel.Text, txtArtists.Text, txtConductor.Text) == false)
+
+            
+
+                {
+                    txtCDLabel.Text = "";
+                    txtArtists.Text = "";
+                    txtConductor.Text = "";
+                    txtCDLabel.Focus();
+                    txtArtists.Focus();
+                    txtConductor.Focus();
+                    MessageBox.Show("Please check that all data is entered and valid.");
+                    return;
+                }
+              
+
+
+                // end inner if then
+
+                dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "CDOrchestra");
+                dbFunctions.InsertCDClassical(Convert.ToInt32(txtUPC.Text), txtCDLabel.Text,
+                    txtArtists.Text);
+                dbFunctions.InsertCDOrchestra(Convert.ToInt32(txtUPC.Text), txtConductor.Text);
+
+
         //returns true if UPC was found
         private Boolean findAnItem(string Edit)
         {
@@ -790,8 +843,54 @@ namespace BookCDDVD_Project
             }
             else
             {
+
+                if (ValidateProduct() == false) return;
+                // Look for duplicate
+                if (lookForDuplicate(txtUPC.Text))
+                {
+                    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
+                        MessageBoxButtons.OK);
+                    return;
+                }
+                // Save an  if data is OK
+
+                if (Validation.ValidateCDChamber(txtCDLabel.Text, txtArtists.Text,txtInstruments.Text) == false)
+
+
+                {
+                    txtCDLabel.Text = "";
+                    txtArtists.Text = "";
+                    txtInstruments.Text = "";
+                    txtCDLabel.Focus();
+                    txtArtists.Focus();
+                    txtInstruments.Focus();
+                    MessageBox.Show("Please check that all data is entered and valid.");
+                    return;
+                }
+
+               
+
+                // end inner if then
+
+                dbFunctions.InsertProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), "CDChamber");
+                dbFunctions.InsertCDClassical(Convert.ToInt32(txtUPC.Text), txtCDLabel.Text,
+                    txtArtists.Text);
+                dbFunctions.InsertCDChamber(Convert.ToInt32(txtUPC.Text), txtInstruments.Text);
+
+                CDChamber thisCDChamberObject = new CDChamber();
+                thisCDChamberObject.Save(this);
+                thisProductList.Add(thisCDChamberObject);
+                recordsProcessedCount++;
+                MessageBox.Show("CD Chamber " + txtTitle.Text +
+                    " Added to DB and Serializable File. Press OK to continue.",
+                    "Transaction Complete", MessageBoxButtons.OK);
+                FormController.clear(this);
+
+
                 currentIndex = thisProductList.UPCMatch(UPC);
                 return true;
+
             }
         }
 
@@ -804,6 +903,12 @@ namespace BookCDDVD_Project
             }
             return false;
         }
+
+
+
+            
+           
+            private void getItem(int i)
 
         private void getItem(int i)
         {
@@ -820,6 +925,7 @@ namespace BookCDDVD_Project
                 return;
             }
             else
+
             {
                 currentIndex = i;
                 thisProductList.getAnItem(i).Display(this);

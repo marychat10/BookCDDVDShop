@@ -26,6 +26,7 @@ namespace BookCDDVD_Project.Classes
         public void Add(Product p)
         {
             hiddenProductList.Add(p);
+            
         }
         // These two methods replace what was a VB Property
         // get or set an item in the List
