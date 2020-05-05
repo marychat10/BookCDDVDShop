@@ -39,11 +39,11 @@ namespace BookCDDVD_Project
             InitializeComponent();
         }
 
-      
+
         // This sub is called when the form is loaded
         private void frmBookCDDVD_Load(System.Object sender, System.EventArgs e)
         {
-          
+
             //// Read serialized binary data file
             SFManager.readFromFile(ref thisProductList, FileName);
             FormController.clear(this);
@@ -97,11 +97,11 @@ namespace BookCDDVD_Project
             MessageBox.Show("Number of records processed = " +
                  recordsProcessedCount.ToString(),
                  "Exit Message", MessageBoxButtons.OK);
-           // MessageBox.Show("The list entries are ...", "Display List Entries");
+            // MessageBox.Show("The list entries are ...", "Display List Entries");
             thisProductList.displayProductList();
 
             // Save serialized binary file
-             SFManager.writeToFile(thisProductList, FileName);
+            SFManager.writeToFile(thisProductList, FileName);
 
             this.Close();
 
@@ -158,7 +158,7 @@ namespace BookCDDVD_Project
             txtPages.Enabled = true;
 
 
-           
+
             txtUPC.Focus();
         } // end DisplayCDChamberForm
 
@@ -180,7 +180,7 @@ namespace BookCDDVD_Project
             comboCISArea.Enabled = true;
 
 
-           
+
             txtUPC.Focus();
         } // end DisplayCISBook Form
 
@@ -200,7 +200,7 @@ namespace BookCDDVD_Project
             txtReleaseDate.Enabled = true;
             txtRunTime.Enabled = true;
 
-            
+
             txtUPC.Focus();
         } // end DVD Form 
 
@@ -297,7 +297,7 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-              
+
             }  // end outer else
         }  // end Create Book Object
 
@@ -370,7 +370,7 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-                
+
             }
         }// end outer else
 
@@ -428,7 +428,7 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-              
+
             }  // end outer else
         }  // end Create DVD Object
 
@@ -557,7 +557,7 @@ namespace BookCDDVD_Project
         private Boolean findAnItem(string Edit)
         {
             string UPC = Convert.ToString(txtUPC.Text);
-           if(thisProductList.UPCMatch(UPC) == -1)
+            if (thisProductList.UPCMatch(UPC) == -1)
             {
 
                 return false;
@@ -579,7 +579,7 @@ namespace BookCDDVD_Project
             btnFind.Enabled = false;
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
-            success = findAnItem(" Edit / Update"); 
+            success = findAnItem(" Edit / Update");
             if (success)
             {
                 btnEdit.Enabled = true;
@@ -641,7 +641,7 @@ namespace BookCDDVD_Project
                 }
                 else
                 {
-                    MessageBox.Show("Fatal error. Data type not Book, BookCIS, DVD, DC Chamber or CD Orchestra. Program Terminated.","Mis - typed Object ", MessageBoxButtons.OK);
+                    MessageBox.Show("Fatal error. Data type not Book, BookCIS, DVD, DC Chamber or CD Orchestra. Program Terminated.", "Mis - typed Object ", MessageBoxButtons.OK);
                     this.Close();
                 } // end multiple alternative if
             } // end if on success
@@ -661,7 +661,7 @@ namespace BookCDDVD_Project
                 btnCreateCDChamber.Enabled = false;
                 btnCreateDVD.Enabled = false;
             }
-            else 
+            else
             {
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
@@ -673,16 +673,18 @@ namespace BookCDDVD_Project
                 }
                 // Save an  if data is OK
 
+
+                if (Validation.ValidateCDOrc(txtCDLabel.Text, txtArtists.Text, txtConductor.Text) == false)
+
                 if (Validation.ValidateCD(txtCDLabel.Text, txtArtists.Text) == false)
+
                 {
                     txtCDLabel.Text = "";
                     txtArtists.Text = "";
                     txtConductor.Text = "";
-                    txtInstruments.Text = "";
                     txtCDLabel.Focus();
                     txtArtists.Focus();
                     txtConductor.Focus();
-                    txtInstruments.Focus();
                     MessageBox.Show("Please check that all data is entered and valid.");
                     return;
                 }
@@ -710,7 +712,9 @@ namespace BookCDDVD_Project
                 MessageBox.Show("CD Orchestra " + txtTitle.Text +
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
-                FormController.clear(this);               
+
+                FormController.clear(this);
+
             }
         }// end outer else
 
@@ -734,22 +738,23 @@ namespace BookCDDVD_Project
                 if (ValidateProduct() == false) return;
                 // Look for duplicate
                 if (lookForDuplicate(txtUPC.Text))
-                    {
-                        MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
-                            MessageBoxButtons.OK);
-                        return;
-                    }
+                {
+                    MessageBox.Show("Duplicates not allowed in this application.", "Duplicates Not Allowed",
+                        MessageBoxButtons.OK);
+                    return;
+                }
                 // Save an  if data is OK
 
+                if (Validation.ValidateCDChamber(txtCDLabel.Text, txtArtists.Text,txtInstruments.Text) == false)
+
                 if (Validation.ValidateCD(txtCDLabel.Text, txtArtists.Text) == false)
+
                 {
                     txtCDLabel.Text = "";
                     txtArtists.Text = "";
-                    txtConductor.Text = "";
                     txtInstruments.Text = "";
                     txtCDLabel.Focus();
                     txtArtists.Focus();
-                    txtConductor.Focus();
                     txtInstruments.Focus();
                     MessageBox.Show("Please check that all data is entered and valid.");
                     return;
@@ -779,7 +784,7 @@ namespace BookCDDVD_Project
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
                 FormController.clear(this);
-            
+
             }
         }
 
@@ -790,38 +795,46 @@ namespace BookCDDVD_Project
             if (thisProductList.Duplicate(UPC) == true)
             {
                 return true;
+
+
             }
 
             return false;
         }
 
-        private void getItem(int i)
-        {
-            if (thisProductList.Count() == 0)
-            {
-                btnDelete.Enabled = false;
-                btnEdit.Enabled = false;
-                // btnToString.Enabled = false;
-                lblUserMessage.Text = "Please select an operation";
-            }
-            else if (i < 0 || i >= thisProductList.Count())
-            {
-                MessageBox.Show("getItem error: index out of range");
-                return;
+
             }
             else
             {
-                currentIndex = i;
-                thisProductList.getAnItem(i).Display(this);
-                lblUserMessage.Text = "Object Type: " +
-                   thisProductList.getAnItem(i).GetType().ToString() +
-                   " List Index: " + i.ToString();
-                btnFind.Enabled = true;
-                btnDelete.Enabled = true;
-                btnEdit.Enabled = true;
-            }  // end else
-        } // end getItem
-
+                return false;
+            }
+         }
+            private void getItem(int i)
+            {
+                if (thisProductList.Count() == 0)
+                {
+                    btnDelete.Enabled = false;
+                    btnEdit.Enabled = false;
+                    // btnToString.Enabled = false;
+                    lblUserMessage.Text = "Please select an operation";
+                }
+                else if (i < 0 || i >= thisProductList.Count())
+                {
+                    MessageBox.Show("getItem error: index out of range");
+                    return;
+                }
+                else
+                {
+                    currentIndex = i;
+                    thisProductList.getAnItem(i).Display(this);
+                    lblUserMessage.Text = "Object Type: " +
+                       thisProductList.getAnItem(i).GetType().ToString() +
+                       " List Index: " + i.ToString();
+                    btnFind.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnEdit.Enabled = true;
+                }  // end else
+            } // end getItem
 
         private void btnEnterUPC_Click(object sender, EventArgs e)
         {
@@ -833,7 +846,9 @@ namespace BookCDDVD_Project
         }
 
 
+        }
     }
+    
 
 
-}
+
