@@ -90,9 +90,11 @@ namespace BookCDDVD_Project.Classes
         // Display data in object on form
         public override void Display(frmBookCDDVD f)
         {
+            String leftISBN = Convert.ToString(hiddenISBN).Substring(0, 3);
+            String rightISBN = Convert.ToString(hiddenISBN).Substring(3);
             base.Display(f);
             f.txtISBNLeft.Text = Convert.ToString(hiddenISBN).Substring(0, 3);
-            f.txtISBNRight.Text = Convert.ToString(hiddenISBN).Substring(3, 6);
+            f.txtISBNRight.Text = Convert.ToString(hiddenISBN).Substring(3);
             f.txtAuthor.Text = hiddenAuthor.ToString();
             f.txtPages.Text = hiddenPages.ToString();
         }  // end Display
