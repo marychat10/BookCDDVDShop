@@ -260,6 +260,10 @@ namespace BookCDDVDShop
             f.txtLeadActor.BackColor = Color.Red;
             f.txtReleaseDate.BackColor = Color.Red;
             f.txtRunTime.BackColor = Color.Red;
+            f.txtLeadActor.BackColor = Color.Red;
+            f.txtReleaseDate.BackColor = Color.Red;
+            f.txtRunTime.BackColor = Color.Red;
+
            
         } // end activateBook
 

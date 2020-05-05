@@ -609,6 +609,8 @@ namespace BookCDDVD_Project
 
                     string ptype = attributes[4]; // gets the product type from this attribute and then creates new product to display in form
 
+                    txtUPC.Enabled = false;
+
                     if (ptype == "DVD")
                     {
                         MessageBox.Show("UPC: " + attributes[0] + "\nPrice: " + attributes[1] + "\nTitle: " + attributes[2] + "\nQuantity: " + attributes[3] +
@@ -779,6 +781,89 @@ namespace BookCDDVD_Project
             } // end if on success
         } // end btnEdit_Click
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Product p = thisProductList.getAnItem(currentIndex);
+            if (p.GetType() == typeof(CDChamber))
+            {
+                CDChamber thisCDChamberObject = new CDChamber(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLabel.Text, txtArtists.Text, txtInstruments.Text);
+                thisCDChamberObject.Save(this);
+                thisProductList.Add(thisCDChamberObject);
+                thisProductList.setAnItem(currentIndex, thisCDChamberObject);
+
+                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                dbFunctions.UpdateCDChamber(Convert.ToInt32(txtUPC.Text), txtInstruments.Text);
+
+            }
+            else if (p.GetType() == typeof(CDOrchestra))
+            {
+                CDOrchestra thisCDOrchestraObject = new CDOrchestra(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLabel.Text, txtArtists.Text, txtConductor.Text);
+                thisCDOrchestraObject.Save(this);
+                thisProductList.Add(thisCDOrchestraObject);
+                thisProductList.setAnItem(currentIndex, thisCDOrchestraObject);
+
+
+                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                dbFunctions.UpdateCDOrchestra(Convert.ToInt32(txtUPC.Text), txtConductor.Text);
+            }
+            else if (p.GetType() == typeof(Book))
+            {
+                int ISBN = Convert.ToInt32(txtISBNLeft.Text + txtISBNRight.Text);
+                Book thisBookObject = new Book(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+                thisBookObject.Save(this);
+                thisProductList.Add(thisBookObject);
+                thisProductList.setAnItem(currentIndex, thisBookObject);
+
+                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                dbFunctions.UpdateBook(Convert.ToInt32(txtUPC.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+            }
+            else if (p.GetType() == typeof(BookCIS))
+            {
+                int ISBN = Convert.ToInt32(txtISBNLeft.Text + txtISBNRight.Text);
+                BookCIS thisBookCISObject = new BookCIS(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text), comboCISArea.Text);
+                thisBookCISObject.Save(this);
+                thisProductList.Add(thisBookCISObject);
+                thisProductList.setAnItem(currentIndex, thisBookCISObject);
+
+                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                dbFunctions.UpdateBookCIS(Convert.ToInt32(txtUPC.Text), comboCISArea.Text);
+            } // end multiple alternative if
+            else if (p.GetType() == typeof(DVD))
+            {
+                DVD thisDVDObject = new DVD(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLeadActor.Text, Convert.ToDateTime(txtReleaseDate.Text), Convert.ToInt32(txtReleaseDate.Text));
+                thisDVDObject.Save(this);
+                thisProductList.Add(thisDVDObject);
+                thisProductList.setAnItem(currentIndex, thisDVDObject);
+
+                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                dbFunctions.UpdateDVD(Convert.ToInt32(txtUPC.Text), txtLeadActor.Text, Convert.ToDateTime(txtReleaseDate.Text), Convert.ToInt32(txtReleaseDate.Text));
+            }
+            else
+            {
+                MessageBox.Show("Fatal error. Data type not Book, BookCIS, DVD, DC Chamber or CD Orchestra. Program Terminated.", "Mis - typed Object ", MessageBoxButtons.OK);
+                this.Close();
+            } // end multiple alternative if
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int productUPC = Convert.ToInt32(txtUPC.Text);
+            MessageBox.Show("Deleting following product");
+            int index = thisProductList.UPCMatch(txtUPC.Text);
+            Product thisProduct = thisProductList.getAnItem(index);
+            thisProduct.displayProductAsString(thisProduct);
+            dbFunctions.Delete(productUPC);
+        }
 
         //returns true if UPC was found
         private Boolean findAnItem(string Edit)
@@ -835,83 +920,11 @@ namespace BookCDDVD_Project
 
         private void frmBookCDDVD_Load_1(object sender, EventArgs e)
         {
-            btnEnterUPC.Enabled = true;
-            btnFind.Enabled = true;
-            btnEdit.Enabled = true;
-            btnSave.Enabled = true;
-            btnDelete.Enabled = true;
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            Product p = thisProductList.getAnItem(currentIndex);
-            if (p.GetType() == typeof(CDChamber))
-            {
-                CDChamber thisCDChamberObject = new CDChamber(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLabel.Text, txtArtists.Text, txtInstruments.Text);
-                thisCDChamberObject.Save(this);
-                thisProductList.Add(thisCDChamberObject);
-
-                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                dbFunctions.UpdateCDChamber(Convert.ToInt32(txtUPC.Text), txtInstruments.Text);
-
-            }
-            else if (p.GetType() == typeof(CDOrchestra))
-            {
-                CDOrchestra thisCDOrchestraObject = new CDOrchestra(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLabel.Text, txtArtists.Text, txtConductor.Text);
-                thisCDOrchestraObject.Save(this);
-                thisProductList.Add(thisCDOrchestraObject);
-
-                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                dbFunctions.UpdateCDOrchestra(Convert.ToInt32(txtUPC.Text), txtConductor.Text);
-            }
-            else if (p.GetType() == typeof(Book))
-            {
-                int ISBN = Convert.ToInt32(txtISBNLeft.Text + txtISBNRight.Text);
-                Book thisBookObject = new Book(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text));
-                thisBookObject.Save(this);
-                thisProductList.Add(thisBookObject);
-
-                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                dbFunctions.UpdateBook(Convert.ToInt32(txtUPC.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text));
-            }
-            else if (p.GetType() == typeof(BookCIS))
-            {
-                int ISBN = Convert.ToInt32(txtISBNLeft.Text + txtISBNRight.Text);
-                BookCIS thisBookCISObject = new BookCIS(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text), comboCISArea.Text);
-                thisBookCISObject.Save(this);
-                thisProductList.Add(thisBookCISObject);
-
-                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                dbFunctions.UpdateBookCIS(Convert.ToInt32(txtUPC.Text), comboCISArea.Text);
-            } // end multiple alternative if
-            else if (p.GetType() == typeof(DVD))
-            {
-                DVD thisDVDObject = new DVD(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLeadActor.Text, Convert.ToDateTime(txtReleaseDate.Text), Convert.ToInt32(txtReleaseDate.Text));
-                thisDVDObject.Save(this);
-                thisProductList.Add(thisDVDObject);
-
-                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                dbFunctions.UpdateDVD(Convert.ToInt32(txtUPC.Text), txtLeadActor.Text, Convert.ToDateTime(txtReleaseDate.Text), Convert.ToInt32(txtReleaseDate.Text));
-            }
-            else
-            {
-                MessageBox.Show("Fatal error. Data type not Book, BookCIS, DVD, DC Chamber or CD Orchestra. Program Terminated.", "Mis - typed Object ", MessageBoxButtons.OK);
-                this.Close();
-            } // end multiple alternative if
+            //btnEnterUPC.Enabled = true;
+            //btnFind.Enabled = true;
+            //btnEdit.Enabled = true;
+            //btnSave.Enabled = true;
+            //btnDelete.Enabled = true;
         }
     }
-    }
-    
-
-
-
+}

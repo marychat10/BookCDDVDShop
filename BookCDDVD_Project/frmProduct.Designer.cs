@@ -462,17 +462,18 @@
             // lblReleaseDate
             // 
             this.lblReleaseDate.AutoSize = true;
-            this.lblReleaseDate.Location = new System.Drawing.Point(763, 1116);
+            this.lblReleaseDate.Location = new System.Drawing.Point(778, 1114);
             this.lblReleaseDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblReleaseDate.Name = "lblReleaseDate";
             this.lblReleaseDate.Size = new System.Drawing.Size(187, 32);
             this.lblReleaseDate.TabIndex = 35;
             this.lblReleaseDate.Text = "Release Date";
+            this.toolTip1.SetToolTip(this.lblReleaseDate, "(mm/dd/yyyy)");
             // 
             // txtReleaseDate
             // 
             this.txtReleaseDate.Enabled = false;
-            this.txtReleaseDate.Location = new System.Drawing.Point(976, 1116);
+            this.txtReleaseDate.Location = new System.Drawing.Point(973, 1110);
             this.txtReleaseDate.Margin = new System.Windows.Forms.Padding(5);
             this.txtReleaseDate.Name = "txtReleaseDate";
             this.txtReleaseDate.Size = new System.Drawing.Size(217, 38);
@@ -483,7 +484,7 @@
             // txtRunTime
             // 
             this.txtRunTime.Enabled = false;
-            this.txtRunTime.Location = new System.Drawing.Point(1467, 1111);
+            this.txtRunTime.Location = new System.Drawing.Point(1470, 1116);
             this.txtRunTime.Margin = new System.Windows.Forms.Padding(5);
             this.txtRunTime.Name = "txtRunTime";
             this.txtRunTime.Size = new System.Drawing.Size(217, 38);
@@ -668,16 +669,18 @@
             this.btnDelete.Text = "Delete\r\n";
             this.toolTip1.SetToolTip(this.btnDelete, "Click to Delete Product from the List of Products");
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblRunTime
             // 
             this.lblRunTime.AutoSize = true;
-            this.lblRunTime.Location = new System.Drawing.Point(1264, 1116);
+            this.lblRunTime.Location = new System.Drawing.Point(1324, 1117);
             this.lblRunTime.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblRunTime.Name = "lblRunTime";
             this.lblRunTime.Size = new System.Drawing.Size(137, 32);
             this.lblRunTime.TabIndex = 56;
             this.lblRunTime.Text = "Run Time\r\n";
+            this.toolTip1.SetToolTip(this.lblRunTime, "Runtime in total minutes");
             // 
             // toolTip1
             // 

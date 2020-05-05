@@ -120,7 +120,7 @@ namespace BookCDDVD_Project.Classes
         // Display data in object on form
         public virtual void Display(frmBookCDDVD f)
         {
-            f.txtUPC.Text = hiddenUPC.ToString();
+            f.txtUPC.Text = Convert.ToString(hiddenUPC);
             f.txtPrice.Text = hiddenPrice.ToString();
             f.txtTitle.Text = hiddenTitle;
             f.txtQuantity.Text = hiddenQuantity.ToString();
