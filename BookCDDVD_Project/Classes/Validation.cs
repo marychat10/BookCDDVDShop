@@ -346,10 +346,6 @@ namespace BookCDDVD_Project.Classes
         {
             if (ValidateCDLabel(label) && ValidateCDArtists(artists) && ValidateCDOrchestra(conductor))
 
-        public static bool ValidateCD(string label, string artists)
-        {
-            if (ValidateCDLabel(label) && ValidateCDArtists(artists))
-
             {
                 return true;
             }
@@ -357,7 +353,6 @@ namespace BookCDDVD_Project.Classes
             {
                 return false;
             }
-
         }
 
         public static bool ValidateCDOrchestra(string conductor)

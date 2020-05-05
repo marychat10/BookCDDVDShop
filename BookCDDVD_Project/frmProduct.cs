@@ -676,7 +676,7 @@ namespace BookCDDVD_Project
 
                 if (Validation.ValidateCDOrc(txtCDLabel.Text, txtArtists.Text, txtConductor.Text) == false)
 
-                if (Validation.ValidateCD(txtCDLabel.Text, txtArtists.Text) == false)
+            
 
                 {
                     txtCDLabel.Text = "";
@@ -688,13 +688,7 @@ namespace BookCDDVD_Project
                     MessageBox.Show("Please check that all data is entered and valid.");
                     return;
                 }
-                if (Validation.ValidateCDOrchestra(txtConductor.Text) == false)
-                {
-                    txtConductor.Text = "";
-                    txtConductor.Focus();
-                    MessageBox.Show("Please check that all data is entered and valid.");
-                    return;
-                }
+              
 
 
                 // end inner if then
@@ -746,7 +740,6 @@ namespace BookCDDVD_Project
 
                 if (Validation.ValidateCDChamber(txtCDLabel.Text, txtArtists.Text,txtInstruments.Text) == false)
 
-                if (Validation.ValidateCD(txtCDLabel.Text, txtArtists.Text) == false)
 
                 {
                     txtCDLabel.Text = "";
@@ -759,13 +752,7 @@ namespace BookCDDVD_Project
                     return;
                 }
 
-                if (Validation.ValidateCDChamber(txtInstruments.Text) == false)
-                {
-                    txtInstruments.Text = "";
-                    txtConductor.Focus();
-                    MessageBox.Show("Please check that all data is entered and valid.");
-                    return;
-                }
+               
 
                 // end inner if then
 
@@ -802,12 +789,8 @@ namespace BookCDDVD_Project
         }
 
 
-            }
-            else
-            {
-                return false;
-            }
-         }
+            
+           
             private void getItem(int i)
             {
                 if (thisProductList.Count() == 0)
