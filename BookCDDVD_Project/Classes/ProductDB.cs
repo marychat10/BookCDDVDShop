@@ -511,6 +511,9 @@ namespace BookCDDVDShop_Project.Classes
                 dbStringProduct = dbStringProduct + myDataReader["fldQuantity"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldProductType"].ToString() + Environment.NewLine;
 
+                dbStringProduct = dbStringProduct + myDataReader["fldLabel"].ToString() + Environment.NewLine;
+                dbStringProduct = dbStringProduct + myDataReader["fldArtists"].ToString() + Environment.NewLine;
+
                 dbStringCDChamber = dbStringCDChamber + myDataReader["fldInstrumentList"].ToString() + Environment.NewLine;
             }
             catch (OleDbException ex)
@@ -565,6 +568,9 @@ namespace BookCDDVDShop_Project.Classes
                 dbStringProduct = dbStringProduct + myDataReader["fldTitle"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldQuantity"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldProductType"].ToString() + Environment.NewLine;
+
+                dbStringProduct = dbStringProduct + myDataReader["fldLabel"].ToString() + Environment.NewLine;
+                dbStringProduct = dbStringProduct + myDataReader["fldArtists"].ToString() + Environment.NewLine;
 
                 dbStringCDOrchestra = dbStringCDOrchestra + myDataReader["fldConductor"].ToString() + Environment.NewLine;
             }
@@ -667,14 +673,16 @@ namespace BookCDDVDShop_Project.Classes
                 if (myDataReader.HasRows == false) OKFlag = false;
                 else OKFlag = true; // returns true if Select was successful
 
-                myDataReader = null;
-
                 myDataReader.Read();
                 dbStringProduct = myDataReader["fldUPC"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldPrice"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldTitle"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldQuantity"].ToString() + Environment.NewLine;
                 dbStringProduct = dbStringProduct + myDataReader["fldProductType"].ToString() + Environment.NewLine;
+
+                dbStringProduct = dbStringProduct + myDataReader["fldISBN"].ToString() + Environment.NewLine;
+                dbStringProduct = dbStringProduct + myDataReader["fldAuthor"].ToString() + Environment.NewLine;
+                dbStringProduct = dbStringProduct + myDataReader["fldPages"].ToString() + Environment.NewLine;
 
                 dbStringBookCIS = dbStringBookCIS + myDataReader["fldCISArea"].ToString() + Environment.NewLine;
             }
