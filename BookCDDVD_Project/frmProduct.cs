@@ -17,7 +17,6 @@ using BookCDDVDShop_Project.Classes;
 
 namespace BookCDDVD_Project
 {
-
     public partial class frmBookCDDVD : Form
     {
         // This is a class object that manages a List of Products		
@@ -473,17 +472,24 @@ namespace BookCDDVD_Project
 
                     if (ptype == "DVD")
                     {
+                        MessageBox.Show("UPC: " + attributes[0] + "\nPrice: " + attributes[1] + "\nTitle: " + attributes[2] + "\nQuantity: " + attributes[3] +
+                           "\nType: " + attributes[4] + "\nISBN: " + attributes[5] + "\nAuthor: " + attributes[6] + "\nPages: " + attributes[7], "PRODUCT FOUND"
+                           );
+
                         prod = new DVD(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                           attributes[4], Convert.ToDateTime(attributes[7]), Convert.ToInt32(attributes[6]));
+                           attributes[5], Convert.ToDateTime(attributes[6]), Convert.ToInt32(attributes[7]));
                         prod.Display(this);
                         FormController.searchForm(this);
                         txtUPC.Clear();
                     }
                     else if (ptype == "Book")
                     {
+                        MessageBox.Show("UPC: " + attributes[0] + "\nPrice: " + attributes[1] + "\nTitle: " + attributes[2] + "\nQuantity: " + attributes[3] +
+                            "\nType: " + attributes[4] + "\nISBN: " + attributes[5] + "\nAuthor: " + attributes[6] + "\nPages: " + attributes[7], "PRODUCT FOUND"
+                            );
 
                         prod = new Book(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                            Convert.ToInt32(attributes[4]), attributes[5], Convert.ToInt32(attributes[6]));
+                            Convert.ToInt32(attributes[5]), attributes[6], Convert.ToInt32(attributes[7]));
 
                         prod.Display(this);
                         FormController.searchForm(this);
@@ -494,7 +500,7 @@ namespace BookCDDVD_Project
                     else if (ptype == "BookCIS")
                     {
                         prod = new BookCIS(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                            Convert.ToInt32(attributes[4]), attributes[5], Convert.ToInt32(attributes[6]), attributes[7]);
+                            Convert.ToInt32(attributes[5]), attributes[6], Convert.ToInt32(attributes[7]), attributes[8]);
 
                         prod.Display(this);
                         FormController.searchForm(this);
@@ -503,9 +509,9 @@ namespace BookCDDVD_Project
 
                     }
                     else if (ptype == "CDOrchestra")
-                    {
+                    { 
                         prod = new CDOrchestra(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                            attributes[4], attributes[5], attributes[6]);
+                            attributes[5], attributes[6], attributes[7]);
 
                         prod.Display(this);
                         FormController.searchForm(this);
@@ -516,7 +522,7 @@ namespace BookCDDVD_Project
                     else if (ptype == "CDClassical")
                     {
                         prod = new CDClassical(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                            attributes[4], attributes[5]);
+                            attributes[5], attributes[6]);
 
                         prod.Display(this);
                         FormController.searchForm(this);
@@ -525,7 +531,7 @@ namespace BookCDDVD_Project
                     else if (ptype == "CDChamber")
                     {
                         prod = new CDChamber(Convert.ToInt32(attributes[0]), Convert.ToDecimal(attributes[1]), attributes[2], Convert.ToInt32(attributes[3]),
-                            attributes[4], attributes[5], attributes[6]);
+                            attributes[5], attributes[6], attributes[7]);
 
                         prod.Display(this);
                         FormController.searchForm(this);
@@ -667,7 +673,11 @@ namespace BookCDDVD_Project
                 }
                 // Save an  if data is OK
 
+
                 if (Validation.ValidateCDOrc(txtCDLabel.Text, txtArtists.Text, txtConductor.Text) == false)
+
+                if (Validation.ValidateCD(txtCDLabel.Text, txtArtists.Text) == false)
+
                 {
                     txtCDLabel.Text = "";
                     txtArtists.Text = "";
@@ -735,6 +745,9 @@ namespace BookCDDVD_Project
                 // Save an  if data is OK
 
                 if (Validation.ValidateCDChamber(txtCDLabel.Text, txtArtists.Text,txtInstruments.Text) == false)
+
+                if (Validation.ValidateCD(txtCDLabel.Text, txtArtists.Text) == false)
+
                 {
                     txtCDLabel.Text = "";
                     txtArtists.Text = "";
@@ -782,6 +795,13 @@ namespace BookCDDVD_Project
             {
                 return true;
 
+
+            }
+
+            return false;
+        }
+
+
             }
             else
             {
@@ -814,6 +834,15 @@ namespace BookCDDVD_Project
                     btnEdit.Enabled = true;
                 }  // end else
             } // end getItem
+
+        private void btnEnterUPC_Click(object sender, EventArgs e)
+        {
+            txtUPC.Enabled = true;
+            btnFind.Enabled = true;
+            btnSave.Enabled = true;
+            btnEdit.Enabled = true;
+            txtUPC.Focus();
+        }
 
 
         }

@@ -329,6 +329,7 @@ namespace BookCDDVD_Project.Classes
 
 
         // Validate CD Entry
+
         public static bool ValidateCDChamber(string label, string artists, string instrumentList)
         {
             if (ValidateCDLabel(label) && ValidateCDArtists(artists) && ValidateCDInstrumentList(instrumentList))
@@ -344,6 +345,11 @@ namespace BookCDDVD_Project.Classes
         public static bool ValidateCDOrc(string label, string artists, string conductor)
         {
             if (ValidateCDLabel(label) && ValidateCDArtists(artists) && ValidateCDOrchestra(conductor))
+
+        public static bool ValidateCD(string label, string artists)
+        {
+            if (ValidateCDLabel(label) && ValidateCDArtists(artists))
+
             {
                 return true;
             }
