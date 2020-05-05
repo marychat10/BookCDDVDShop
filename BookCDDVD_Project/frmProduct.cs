@@ -859,45 +859,49 @@ namespace BookCDDVD_Project
             }
             else if (p.GetType() == typeof(CDOrchestra))
             {
-                CDChamber thisCDChamberObject = new CDChamber(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
-                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLabel.Text, txtArtists.Text, txtInstruments.Text);
-                thisCDChamberObject.Save(this);
-                thisProductList.Add(thisCDChamberObject);
+                CDOrchestra thisCDOrchestraObject = new CDOrchestra(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLabel.Text, txtArtists.Text, txtConductor.Text);
+                thisCDOrchestraObject.Save(this);
+                thisProductList.Add(thisCDOrchestraObject);
 
                 dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
-                dbFunctions.UpdateCDChamber(Convert.ToInt32(txtUPC.Text), txtInstruments.Text);
+                dbFunctions.UpdateCDOrchestra(Convert.ToInt32(txtUPC.Text), txtConductor.Text);
             }
             else if (p.GetType() == typeof(Book))
             {
-                FormController.activateBook(this);
-                FormController.deactivateAllButBook(this);
-                FormController.deactivateAddButtons(this);
-                txtISBNLeft.Text = (((Book)p).BookISBN).ToString().Substring(0, 3);
+                int ISBN = Convert.ToInt32(txtISBNLeft.Text + txtISBNRight.Text);
+                Book thisBookObject = new Book(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text));
+                thisBookObject.Save(this);
+                thisProductList.Add(thisBookObject);
 
-                txtISBNRight.Text = (((Book)p).BookISBN).ToString().Substring(3);
-                txtAuthor.Text = ((Book)p).BookAuthor;
-                txtPages.Text = ((Book)p).BookPages.ToString();
+                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                dbFunctions.UpdateBook(Convert.ToInt32(txtUPC.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text));
             }
             else if (p.GetType() == typeof(BookCIS))
             {
-                FormController.activateBookCIS(this);
-                FormController.deactivateAllButBookCIS(this);
-                txtISBNLeft.Text = (((Book)p).BookISBN).ToString().Substring(0, 3);
+                int ISBN = Convert.ToInt32(txtISBNLeft.Text + txtISBNRight.Text);
+                BookCIS thisBookCISObject = new BookCIS(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), ISBN, txtAuthor.Text, Convert.ToInt32(txtPages.Text), comboCISArea.Text);
+                thisBookCISObject.Save(this);
+                thisProductList.Add(thisBookCISObject);
 
-                txtISBNRight.Text = (((Book)p).BookISBN).ToString().Substring(3);
-                txtAuthor.Text = ((Book)p).BookAuthor;
-                txtPages.Text = ((Book)p).BookPages.ToString();
-                comboCISArea.Text = ((BookCIS)p).CISArea; ;
+                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                dbFunctions.UpdateBookCIS(Convert.ToInt32(txtUPC.Text), comboCISArea.Text);
             } // end multiple alternative if
             else if (p.GetType() == typeof(DVD))
             {
-                FormController.activateDVD(this);
-                FormController.deactivateAllButDVD(this);
-                txtLeadActor.Text = ((DVD)p).LeadActor;
-                txtReleaseDate.Text =
-                ((DateTime)((DVD)p).releaseDate).ToString(" mm / dd / yyyy");
-                txtRunTime.Text = (((DVD)p).runTime).ToString();
+                DVD thisDVDObject = new DVD(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                     txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtLeadActor.Text, Convert.ToDateTime(txtReleaseDate.Text), Convert.ToInt32(txtReleaseDate.Text));
+                thisDVDObject.Save(this);
+                thisProductList.Add(thisDVDObject);
+
+                dbFunctions.UpdateProduct(Convert.ToInt32(txtUPC.Text), Convert.ToDecimal(txtPrice.Text),
+                    txtTitle.Text, Convert.ToInt32(txtQuantity.Text));
+                dbFunctions.UpdateDVD(Convert.ToInt32(txtUPC.Text), txtLeadActor.Text, Convert.ToDateTime(txtReleaseDate.Text), Convert.ToInt32(txtReleaseDate.Text));
             }
             else
             {
