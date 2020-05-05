@@ -710,8 +710,7 @@ namespace BookCDDVD_Project
                 MessageBox.Show("CD Orchestra " + txtTitle.Text +
                     " Added to DB and Serializable File. Press OK to continue.",
                     "Transaction Complete", MessageBoxButtons.OK);
-                FormController.clear(this);
-               
+                FormController.clear(this);               
             }
         }// end outer else
 
